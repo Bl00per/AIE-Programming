@@ -3,6 +3,7 @@
 #include "Application.h"
 #include "Renderer2D.h"
 #include "Player.h"
+#include "Enemy.h"
 
 
 class Game2dApp : public aie::Application {
@@ -24,4 +25,6 @@ protected:
 	aie::Texture*		m_ammo;
 
 	Player *mainCharacter;
+	Enemy *enemyCharacter;
+
 };
