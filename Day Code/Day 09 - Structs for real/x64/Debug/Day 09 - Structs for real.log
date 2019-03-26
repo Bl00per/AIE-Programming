@@ -1,7 +1,0 @@
-﻿  Structs.cpp
-c:\users\s172172\desktop\aie-programming\day code\day 09 - structs for real\structs.cpp(31): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-c:\users\s172172\desktop\aie-programming\day code\day 09 - structs for real\structs.cpp(33): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-c:\users\s172172\desktop\aie-programming\day code\day 09 - structs for real\structs.cpp(39): error C2371: 'p_j': redefinition; different basic types
-  c:\users\s172172\desktop\aie-programming\day code\day 09 - structs for real\structs.cpp(38): note: see declaration of 'p_j'
-c:\users\s172172\desktop\aie-programming\day code\day 09 - structs for real\structs.cpp(42): error C2088: '<<': illegal for class
-c:\users\s172172\desktop\aie-programming\day code\day 09 - structs for real\structs.cpp(43): error C2065: 'f_j': undeclared identifier
