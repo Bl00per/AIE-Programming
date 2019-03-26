@@ -1,0 +1,4 @@
+﻿  Review.cpp
+c:\users\s172172\desktop\aie-programming\day code\day 06\review.cpp(71): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\s172172\desktop\aie-programming\day code\day 06\review.cpp(123): error C2065: 'i': undeclared identifier
+c:\users\s172172\desktop\aie-programming\day code\day 06\review.cpp(143): error C2065: 'i': undeclared identifier

@@ -1,0 +1,4 @@
+﻿  Character Arrays.cpp
+c:\users\s172172\desktop\aie-programming\day code\day 03 - character arrays\character arrays.cpp(2): warning C4005: '_CRT_SECURE_NO_WARNINGS': macro redefinition
+  c:\users\s172172\desktop\aie-programming\day code\day 03 - character arrays\character arrays.cpp: note: see previous definition of '_CRT_SECURE_NO_WARNINGS'
+  Day 03 - Character Arrays.vcxproj -> C:\Users\s172172\Desktop\AIE-Programming\Day Code\x64\Debug\Day 03 - Character Arrays.exe

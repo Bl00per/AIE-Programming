@@ -1,0 +1,28 @@
+﻿  Dynamic_Array.cpp
+c:\users\s172172\desktop\aie-programming\day code\day 19 - dynamic array\dynamic_array.h(55): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  c:\users\s172172\desktop\aie-programming\day code\day 19 - dynamic array\dynamic_array.h(73): note: see reference to class template instantiation 'Dynamic_Array<T>' being compiled
+c:\users\s172172\desktop\aie-programming\day code\day 19 - dynamic array\dynamic_array.h(10): error C3861: 'm_data': identifier not found
+c:\users\s172172\desktop\aie-programming\day code\day 19 - dynamic array\dynamic_array.h(10): error C3861: 'm_default_capacity': identifier not found
+c:\users\s172172\desktop\aie-programming\day code\day 19 - dynamic array\dynamic_array.h(11): error C3861: 'm_capacity': identifier not found
+c:\users\s172172\desktop\aie-programming\day code\day 19 - dynamic array\dynamic_array.h(11): error C3861: 'm_default_capacity': identifier not found
+c:\users\s172172\desktop\aie-programming\day code\day 19 - dynamic array\dynamic_array.h(12): error C3861: 'm_count': identifier not found
+c:\users\s172172\desktop\aie-programming\day code\day 19 - dynamic array\dynamic_array.h(17): error C3861: 'm_data': identifier not found
+c:\users\s172172\desktop\aie-programming\day code\day 19 - dynamic array\dynamic_array.h(18): error C3861: 'm_data': identifier not found
+c:\users\s172172\desktop\aie-programming\day code\day 19 - dynamic array\dynamic_array.h(20): error C3861: 'm_capacity': identifier not found
+c:\users\s172172\desktop\aie-programming\day code\day 19 - dynamic array\dynamic_array.h(21): error C3861: 'm_count': identifier not found
+c:\users\s172172\desktop\aie-programming\day code\day 19 - dynamic array\dynamic_array.h(35): error C3861: 'm_data': identifier not found
+c:\users\s172172\desktop\aie-programming\day code\day 19 - dynamic array\dynamic_array.h(37): error C3861: 'm_data': identifier not found
+c:\users\s172172\desktop\aie-programming\day code\day 19 - dynamic array\dynamic_array.h(38): error C3861: 'm_data': identifier not found
+c:\users\s172172\desktop\aie-programming\day code\day 19 - dynamic array\dynamic_array.h(42): error C3861: 'm_count': identifier not found
+c:\users\s172172\desktop\aie-programming\day code\day 19 - dynamic array\dynamic_array.h(43): error C3861: 'm_capacity': identifier not found
+c:\users\s172172\desktop\aie-programming\day code\day 19 - dynamic array\dynamic_array.h(46): error C3861: 'M_data': identifier not found
+c:\users\s172172\desktop\aie-programming\day code\day 19 - dynamic array\dynamic_array.h(46): error C3861: 'm_capacity': identifier not found
+c:\users\s172172\desktop\aie-programming\day code\day 19 - dynamic array\dynamic_array.h(47): error C3861: 'm_capacity': identifier not found
+c:\users\s172172\desktop\aie-programming\day code\day 19 - dynamic array\dynamic_array.h(67): error C2760: syntax error: unexpected token '}', expected ';'
+c:\users\s172172\desktop\aie-programming\day code\day 19 - dynamic array\dynamic_array.cpp(17): error C2440: 'initializing': cannot convert from 'int *' to 'int'
+  c:\users\s172172\desktop\aie-programming\day code\day 19 - dynamic array\dynamic_array.cpp(17): note: There is no context in which this conversion is possible
+c:\users\s172172\desktop\aie-programming\day code\day 19 - dynamic array\dynamic_array.cpp(18): error C2541: 'delete': cannot delete objects that are not pointers
+c:\users\s172172\desktop\aie-programming\day code\day 19 - dynamic array\dynamic_array.cpp(19): error C2440: '=': cannot convert from 'nullptr' to 'int'
+  c:\users\s172172\desktop\aie-programming\day code\day 19 - dynamic array\dynamic_array.cpp(19): note: A native nullptr can only be converted to bool or, using reinterpret_cast, to an integral type
+c:\users\s172172\desktop\aie-programming\day code\day 19 - dynamic array\dynamic_array.cpp(21): error C2512: 'Dynamic_Array<size_t>': no appropriate default constructor available
+  c:\users\s172172\desktop\aie-programming\day code\day 19 - dynamic array\dynamic_array.cpp(21): note: see declaration of 'Dynamic_Array<size_t>'

@@ -1,0 +1,7 @@
+﻿  Templates.cpp
+c:\users\s172172\desktop\aie-programming\day code\day 13 - templates\templates.cpp(23): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+  Day 13 - Templates.vcxproj -> C:\Users\s172172\Desktop\AIE-Programming\Day Code\x64\Debug\Day 13 - Templates.exe

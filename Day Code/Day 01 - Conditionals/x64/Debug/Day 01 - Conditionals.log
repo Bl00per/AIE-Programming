@@ -1,0 +1,12 @@
+﻿  Conditionals.cpp
+c:\users\s172172\desktop\aie-programming\day code\day 01 - conditionals\conditionals.cpp(23): error C2065: 'cout': undeclared identifier
+c:\users\s172172\desktop\aie-programming\day code\day 01 - conditionals\conditionals.cpp(53): error C2059: syntax error: ')'
+c:\users\s172172\desktop\aie-programming\day code\day 01 - conditionals\conditionals.cpp(54): error C2143: syntax error: missing ';' before '{'
+c:\users\s172172\desktop\aie-programming\day code\day 01 - conditionals\conditionals.cpp(55): error C2046: illegal case
+c:\users\s172172\desktop\aie-programming\day code\day 01 - conditionals\conditionals.cpp(57): error C2046: illegal case
+c:\users\s172172\desktop\aie-programming\day code\day 01 - conditionals\conditionals.cpp(59): error C2046: illegal case
+c:\users\s172172\desktop\aie-programming\day code\day 01 - conditionals\conditionals.cpp(61): error C2047: illegal default
+c:\users\s172172\desktop\aie-programming\day code\day 01 - conditionals\conditionals.cpp(56): error C2043: illegal break
+c:\users\s172172\desktop\aie-programming\day code\day 01 - conditionals\conditionals.cpp(58): error C2043: illegal break
+c:\users\s172172\desktop\aie-programming\day code\day 01 - conditionals\conditionals.cpp(60): error C2043: illegal break
+c:\users\s172172\desktop\aie-programming\day code\day 01 - conditionals\conditionals.cpp(63): error C2043: illegal break

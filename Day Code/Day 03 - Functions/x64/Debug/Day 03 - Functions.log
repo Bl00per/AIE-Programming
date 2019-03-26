@@ -1,0 +1,3 @@
+﻿  Functions.cpp
+c:\users\s172172\desktop\aie-programming\day code\day 03 - functions\functions.cpp(10): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  Day 03 - Functions.vcxproj -> C:\Users\s172172\Desktop\AIE-Programming\Day Code\x64\Debug\Day 03 - Functions.exe

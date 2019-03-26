@@ -65,7 +65,9 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Exercise - Arrays (Part 9)"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Exercise - Classes (Part 1)", "Exercise - Class (Part 1)\Exercise - Class (Part 1).vcxproj", "{A1F7FE5A-195F-49B7-8FEF-6E80DDD0AAA1}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Exercise - Pointers", "Exercise - Pointers\Exercise - Pointers.vcxproj", "{931EE757-7837-46E9-96F1-8B90E2FD5888}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Exercise - Pointers (Part 1)", "Exercise - Pointers\Exercise - Pointers.vcxproj", "{931EE757-7837-46E9-96F1-8B90E2FD5888}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Execise - Dynamic Array", "Execise - Dynamic Array\Execise - Dynamic Array.vcxproj", "{6CCAD223-9596-4B1D-8488-E424D2B74A4C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -331,6 +333,14 @@ Global
 		{931EE757-7837-46E9-96F1-8B90E2FD5888}.Release|x64.Build.0 = Release|x64
 		{931EE757-7837-46E9-96F1-8B90E2FD5888}.Release|x86.ActiveCfg = Release|Win32
 		{931EE757-7837-46E9-96F1-8B90E2FD5888}.Release|x86.Build.0 = Release|Win32
+		{6CCAD223-9596-4B1D-8488-E424D2B74A4C}.Debug|x64.ActiveCfg = Debug|x64
+		{6CCAD223-9596-4B1D-8488-E424D2B74A4C}.Debug|x64.Build.0 = Debug|x64
+		{6CCAD223-9596-4B1D-8488-E424D2B74A4C}.Debug|x86.ActiveCfg = Debug|Win32
+		{6CCAD223-9596-4B1D-8488-E424D2B74A4C}.Debug|x86.Build.0 = Debug|Win32
+		{6CCAD223-9596-4B1D-8488-E424D2B74A4C}.Release|x64.ActiveCfg = Release|x64
+		{6CCAD223-9596-4B1D-8488-E424D2B74A4C}.Release|x64.Build.0 = Release|x64
+		{6CCAD223-9596-4B1D-8488-E424D2B74A4C}.Release|x86.ActiveCfg = Release|Win32
+		{6CCAD223-9596-4B1D-8488-E424D2B74A4C}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
