@@ -1,0 +1,41 @@
+﻿  Part 1 2.cpp
+c:\users\s172172\desktop\aie-programming\exercises\exercise - arrays\part 1 2.cpp(6): error C2078: too many initializers
+c:\users\s172172\desktop\aie-programming\exercises\exercise - arrays\part 1 2.cpp(8): error C2059: syntax error: ','
+c:\users\s172172\desktop\aie-programming\exercises\exercise - arrays\part 1 2.cpp(8): error C2143: syntax error: missing ';' before '}'
+c:\users\s172172\desktop\aie-programming\exercises\exercise - arrays\part 1 2.cpp(11): error C2118: negative subscript
+c:\users\s172172\desktop\aie-programming\exercises\exercise - arrays\part 1 2.cpp(12): error C2440: 'initializing': cannot convert from 'int' to 'int [3]'
+  c:\users\s172172\desktop\aie-programming\exercises\exercise - arrays\part 1 2.cpp(12): note: There are no conversions to array types, although there are conversions to references or pointers to arrays
+c:\users\s172172\desktop\aie-programming\exercises\exercise - arrays\part 1 2.cpp(12): error C2059: syntax error: 'constant'
+c:\users\s172172\desktop\aie-programming\exercises\exercise - arrays\part 1 2.cpp(20): error C2143: syntax error: missing ';' before '<<'
+c:\users\s172172\desktop\aie-programming\exercises\exercise - arrays\part 1 2.cpp(20): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\s172172\desktop\aie-programming\exercises\exercise - arrays\part 1 2.cpp(20): error C2371: 'std::cout': redefinition; different basic types
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\iostream(29): note: see declaration of 'std::cout'
+c:\users\s172172\desktop\aie-programming\exercises\exercise - arrays\part 1 2.cpp(21): error C2143: syntax error: missing ';' before '<<'
+c:\users\s172172\desktop\aie-programming\exercises\exercise - arrays\part 1 2.cpp(21): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\s172172\desktop\aie-programming\exercises\exercise - arrays\part 1 2.cpp(21): error C2371: 'std::cout': redefinition; different basic types
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\iostream(29): note: see declaration of 'std::cout'
+c:\users\s172172\desktop\aie-programming\exercises\exercise - arrays\part 1 2.cpp(22): error C2143: syntax error: missing ';' before '<<'
+c:\users\s172172\desktop\aie-programming\exercises\exercise - arrays\part 1 2.cpp(22): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\s172172\desktop\aie-programming\exercises\exercise - arrays\part 1 2.cpp(22): error C2371: 'std::cout': redefinition; different basic types
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\iostream(29): note: see declaration of 'std::cout'
+c:\users\s172172\desktop\aie-programming\exercises\exercise - arrays\part 1 2.cpp(24): error C2143: syntax error: missing ';' before '<<'
+c:\users\s172172\desktop\aie-programming\exercises\exercise - arrays\part 1 2.cpp(24): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\s172172\desktop\aie-programming\exercises\exercise - arrays\part 1 2.cpp(24): error C2371: 'std::cout': redefinition; different basic types
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\iostream(29): note: see declaration of 'std::cout'
+c:\users\s172172\desktop\aie-programming\exercises\exercise - arrays\part 1 2.cpp(25): error C2143: syntax error: missing ';' before '<<'
+c:\users\s172172\desktop\aie-programming\exercises\exercise - arrays\part 1 2.cpp(25): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\s172172\desktop\aie-programming\exercises\exercise - arrays\part 1 2.cpp(25): error C2371: 'std::cout': redefinition; different basic types
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\iostream(29): note: see declaration of 'std::cout'
+c:\users\s172172\desktop\aie-programming\exercises\exercise - arrays\part 1 2.cpp(28): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\s172172\desktop\aie-programming\exercises\exercise - arrays\part 1 2.cpp(28): error C2365: 'system': redefinition; previous definition was 'function'
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdlib.h(1218): note: see declaration of 'system'
+c:\users\s172172\desktop\aie-programming\exercises\exercise - arrays\part 1 2.cpp(29): error C3927: '->': trailing return type is not allowed after a non-function declarator
+c:\users\s172172\desktop\aie-programming\exercises\exercise - arrays\part 1 2.cpp(29): error C3484: syntax error: expected '->' before the return type
+c:\users\s172172\desktop\aie-programming\exercises\exercise - arrays\part 1 2.cpp(29): error C3613: missing return type after '->' ('int' assumed)
+c:\users\s172172\desktop\aie-programming\exercises\exercise - arrays\part 1 2.cpp(29): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\s172172\desktop\aie-programming\exercises\exercise - arrays\part 1 2.cpp(29): error C2371: 'std::cin': redefinition; different basic types
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\iostream(28): note: see declaration of 'std::cin'
+c:\users\s172172\desktop\aie-programming\exercises\exercise - arrays\part 1 2.cpp(29): error C2146: syntax error: missing ';' before identifier 'get'
+c:\users\s172172\desktop\aie-programming\exercises\exercise - arrays\part 1 2.cpp(31): error C2059: syntax error: 'return'
+c:\users\s172172\desktop\aie-programming\exercises\exercise - arrays\part 1 2.cpp(32): error C2059: syntax error: '}'
+c:\users\s172172\desktop\aie-programming\exercises\exercise - arrays\part 1 2.cpp(32): error C2143: syntax error: missing ';' before '}'
