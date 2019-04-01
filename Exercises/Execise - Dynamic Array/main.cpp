@@ -15,6 +15,8 @@ int main() {
 
 	my_array.pop();
 
+	my_array.insert();
+
 	
 	my_list->pushBack(100);
 	my_list->pushBack(200);

@@ -131,13 +131,13 @@ public:
 			current = current->m_next;
 		}
 
-		node<T>* out_node = nullptr; 
+		node<T>* out_node = nullptr;
 		if (current != m_end)
 		{
 			// Introducing neighbours
 			current->m_next->m_previous = current->m_previous;
 			current->m_previous->m_next = current->m_next;
-			
+
 			out_node = current->m_next;
 
 			// Removing node
@@ -168,24 +168,28 @@ public:
 		}
 	}
 
+	// Beginning of the list
 	node<T>* begin()
 	{
 		node<T>* current = m_start;
 		return current;
 	}
 
+	// End of the list
 	node<T>* end()
 	{
 		node<T>* current = m_end;
 		return current;
 	}
 
+	// First value of the list
 	T first()
 	{
 		node<T>* current = m_start->m_next;
 		return current->m_data;
 	}
 
+	// Last value of the list
 	T last()
 	{
 		node<T>* current = m_end->m_previous;
