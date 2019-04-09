@@ -94,8 +94,11 @@ public:
 	*/
 	void grow()
 	{
+		while (m_count >= m_capacity)
+		{
+			m_capacity *= 2; // Doubling capacity when needed
+		}
 		// Increase size of array
-		m_capacity *= 2; // Doubling capacity when needed
 		T* new_location = new T[m_capacity]; // New temp. storage
 		for (size_t i = 0; i < m_count; i++) // Deep copy to new storage
 		{
@@ -105,16 +108,14 @@ public:
 		m_data = new_location;				 // Point at new storage
 	}
 
-	void insert(dynamic_array<T>& a_data, size_t a_elemen_count, size_t a_index)
-	{
-		insert(a_data.m_data, a_data.m_count, a_index);
-	}
+
 
 	// 1 or more elements or type t
 	void insert(const T* a_data, size_t a_elemen_count, size_t a_index)
 	{
+		m_count += a_elemen_count;
 		// Check capacity for insertion of 1 element
-		while (m_count + a_elemen_count >= m_capacity)
+		if (m_count >= m_capacity)
 		{
 			grow();
 		}
@@ -126,10 +127,15 @@ public:
 		}
 		// Copy insertion from array
 		size_t j = 0;
-		for (size_t i = a_index; i < a_index; i++, j++)
+		for (size_t i = a_index; i < a_index + a_elemen_count; i++, j++)
 		{
 			m_data[i] = a_data[j]; // Insert from array
 		}
+	}
+
+	void insert(dynamic_array<T>& a_data, size_t a_index)
+	{
+		insert(a_data.m_data, a_data.m_count, a_index);
 	}
 
 	// Remove element from the array
@@ -168,114 +174,18 @@ public:
 		m_count = 0;
 	}
 
-	void PrintArray()
+	void deleteData()
+	{
+		delete[] m_data;
+	}
+
+	void printArray()
 	{
 		for (int i = 0; i < m_count; i++)
 		{
-			std::cout << m_data[i] << ", ";
+			std::cout << m_data[i] << std::endl;
 		}
 		std::cout << '\n';
-	}
-
-	void bubbleSort()
-	{
-		bool swapped = true;
-
-		for (int i = 0; i < m_count; i++)
-		{
-			std::cout << "Loop: " << i << std::endl;
-
-			swapped = false;
-			for (int j = 1; j < m_count; j++)
-			{
-				if (m_data[j - 1] > m_data[j])
-				{
-					// Switching the values of the two values
-					T temp = m_data[j];
-					m_data[j - 1] = m_data[j - 1];
-					m_data[j - 1] = temp;
-					swapped = true;
-					std::cout << m_data[j - 1] << " swapped with " << m_data[j] << std::endl;
-				}
-			}
-
-			if (swapped = false)
-			{
-				break;
-			}
-		}
-	}
-
-	void ShakerSort()
-	{
-		bool swapped = true;
-		int start = 0;
-		int end = m_count - 1;
-
-		while (swapped)
-		{
-			swapped = false;
-
-			// first inner loop, going up the array
-			for (int i = start; i < end; i++)
-			{
-				// compare neighbouring elements and swap
-				if (m_data[i] > m_data[i + 1])
-				{
-					T temp = m_data[i];
-					m_data[i] = m_data[i + 1];
-					m_data[i + 1] = temp;
-					swapped = true;
-				}
-			}
-
-			if (swapped == false)
-			{
-				break;
-			}
-			end--;
-
-			// second inner loop, going back down
-			for (int i = end - 1; i >= start; i--)
-			{
-				// compare neighbouring elements and swap
-				if (m_data[i] > m_data[i + 1])
-				{
-					T temp m_data[i];
-					m_data[i] = m_data[i + 1];
-					m_data[i + 1] = temp;
-					swapped = true;
-				}
-			}
-
-			if (swaped == false)
-			{
-				break;
-			}
-			start++;
-
-		}
-	}
-
-	void InsertSort()
-	{
-		int key = 0;
-		for (int i = 1; i < m_count; i++) // Loops through each element as the key
-		{
-			key = m_data[i]; // Setting the key to be the data at i
-			int j = i - 1; // Setting j as the element before i
-
-			while ((j >= 0) && (m_data[j] > key))
-			{
-				m_data[j + 1] = m_data[j];
-				//m_data[j] = key;
-				j--;
-			}
-			m_data[j + 1] = key;
-
-			PrintArray();
-			std::cout << "\'Moved\': " << key << std::endl;
-		}
 	}
 
 	// Access array element by index

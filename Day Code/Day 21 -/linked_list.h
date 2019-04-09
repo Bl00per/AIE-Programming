@@ -77,21 +77,6 @@ public:
 		++m_count;
 	}
 
-	// Push and pushback are same thing
-	//void push(const T& a_data)
-	//{
-	//	node<T>* current = new node<T>();
-	//	current->m_data = a_data;
-	//	// Cross link at end
-	//	current->m_next = m_end;
-	//	current->m_previous = m_end->m_previous;
-
-	//	m_end->m_previous = current;
-	//	current->m_previous->m_next = current;
-
-	//	++m_count;
-	//}
-
 	// Inserts data at location a_index
 	// If index is out of bounds, data inserted at end
 	void insert(const T& a_data, const size_t a_index)
@@ -145,6 +130,7 @@ public:
 			delete current;
 			current = nullptr;
 		}
+		--m_count;
 		return out_node;
 	}
 
@@ -192,6 +178,7 @@ public:
 	// Last value of the list
 	T last()
 	{
+		//if (m_end->m_previous != m_start)
 		node<T>* current = m_end->m_previous;
 		return current->m_data;
 	}
