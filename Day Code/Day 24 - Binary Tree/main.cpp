@@ -17,6 +17,10 @@ int main()
 	std::cout << bt.find(14) << std::endl;
 	std::cout << bt.find(5) << std::endl;
 
+	bt.remove(6);
+
+	std::cout << bt.find(6) << std::endl;
+
 
 
 	return 0;

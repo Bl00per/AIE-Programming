@@ -7,7 +7,7 @@ public:
 	node(const T& a_data) : m_data(a_data)
 	{}
 
-	~node();
+	~node() {}
 
 	// Data member for this node
 	T m_data;
