@@ -9,6 +9,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tutorial - Conditionals", "
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tutorial - Binary Search", "Tutorial - Binary Search\Tutorial - Binary Search.vcxproj", "{F0188319-9382-4CD5-87D4-8CE9F885FE79}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tutorial - Interprocess Communication App1", "Tutorial - Interprocess Communication\Tutorial - Interprocess Communication.vcxproj", "{67376C10-A7F1-4342-8401-C0F38DB33B29}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tutorial - Interprocess Communication App2", "Tutorial - Interprocess Communication App2\Tutorial - Interprocess Communication App2.vcxproj", "{7091AB94-7254-40C5-B0E4-1C6F4A09534B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -41,6 +45,22 @@ Global
 		{F0188319-9382-4CD5-87D4-8CE9F885FE79}.Release|x64.Build.0 = Release|x64
 		{F0188319-9382-4CD5-87D4-8CE9F885FE79}.Release|x86.ActiveCfg = Release|Win32
 		{F0188319-9382-4CD5-87D4-8CE9F885FE79}.Release|x86.Build.0 = Release|Win32
+		{67376C10-A7F1-4342-8401-C0F38DB33B29}.Debug|x64.ActiveCfg = Debug|x64
+		{67376C10-A7F1-4342-8401-C0F38DB33B29}.Debug|x64.Build.0 = Debug|x64
+		{67376C10-A7F1-4342-8401-C0F38DB33B29}.Debug|x86.ActiveCfg = Debug|Win32
+		{67376C10-A7F1-4342-8401-C0F38DB33B29}.Debug|x86.Build.0 = Debug|Win32
+		{67376C10-A7F1-4342-8401-C0F38DB33B29}.Release|x64.ActiveCfg = Release|x64
+		{67376C10-A7F1-4342-8401-C0F38DB33B29}.Release|x64.Build.0 = Release|x64
+		{67376C10-A7F1-4342-8401-C0F38DB33B29}.Release|x86.ActiveCfg = Release|Win32
+		{67376C10-A7F1-4342-8401-C0F38DB33B29}.Release|x86.Build.0 = Release|Win32
+		{7091AB94-7254-40C5-B0E4-1C6F4A09534B}.Debug|x64.ActiveCfg = Debug|x64
+		{7091AB94-7254-40C5-B0E4-1C6F4A09534B}.Debug|x64.Build.0 = Debug|x64
+		{7091AB94-7254-40C5-B0E4-1C6F4A09534B}.Debug|x86.ActiveCfg = Debug|Win32
+		{7091AB94-7254-40C5-B0E4-1C6F4A09534B}.Debug|x86.Build.0 = Debug|Win32
+		{7091AB94-7254-40C5-B0E4-1C6F4A09534B}.Release|x64.ActiveCfg = Release|x64
+		{7091AB94-7254-40C5-B0E4-1C6F4A09534B}.Release|x64.Build.0 = Release|x64
+		{7091AB94-7254-40C5-B0E4-1C6F4A09534B}.Release|x86.ActiveCfg = Release|Win32
+		{7091AB94-7254-40C5-B0E4-1C6F4A09534B}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
