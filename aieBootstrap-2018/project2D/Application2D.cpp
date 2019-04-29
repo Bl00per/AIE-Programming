@@ -158,8 +158,6 @@ void Application2D::draw() {
 	m_2dRenderer->drawSprite(m_buffboi, objectPosX, objectPosY, 365, 365, objectRotation, 0.8);
 	
 
-	m_binary_tree.draw(m_2dRenderer);
-
 	// output some text, uses the last used colour
 	char fps[32];
 	sprintf_s(fps, 32, "FPS: %i", getFPS());
