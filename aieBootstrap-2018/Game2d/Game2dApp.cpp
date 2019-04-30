@@ -17,8 +17,6 @@ bool Game2dApp::startup() {
 
 	mainCharacter = new Player();
 
-	enemyCharacter = new Enemy();
-
 	// TODO: remember to change this when redistributing a build!
 	// the following path would be used instead: "./font/consolas.ttf"
 	m_font = new aie::Font("../bin/font/consolas.ttf", 32);
@@ -38,8 +36,6 @@ void Game2dApp::update(float deltaTime) {
 
 	mainCharacter->update(deltaTime);
 
-	enemyCharacter->update(deltaTime);
-
 	// exit the application
 	if (input->isKeyDown(aie::INPUT_KEY_ESCAPE))
 		quit();
@@ -56,8 +52,6 @@ void Game2dApp::draw() {
 
 	// draw your stuff here!
 	mainCharacter->draw(m_2dRenderer);
-
-	enemyCharacter->draw(m_2dRenderer);
 	
 	// output some text, uses the last used colour
 	m_2dRenderer->drawText(m_font, "Press ESC to quit", 8, 10);

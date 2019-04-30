@@ -3,7 +3,6 @@
 #include "Application.h"
 #include "Renderer2D.h"
 #include "Player.h"
-#include "Enemy.h"
 #include "node.h"
 #include "binary_tree.h"
 
@@ -26,10 +25,8 @@ protected:
 	aie::Font*			m_font;
 	aie::Texture*		m_ammo;
 	binary_tree<int>	m_binary_tree;
-	//node<int>			;
 	
 
 	Player *mainCharacter;
-	Enemy *enemyCharacter;
 
 };
