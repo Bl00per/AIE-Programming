@@ -162,16 +162,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Asteroid_large.cpp" />
+    <ClCompile Include="AsteroidManager.cpp" />
+    <ClCompile Include="Asteroid_medium.cpp" />
     <ClCompile Include="Bullet.cpp" />
+    <ClCompile Include="Asteroid_small.cpp" />
     <ClCompile Include="Game2dApp.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Player.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="binary_tree.h" />
+    <ClInclude Include="Asteroid_large.h" />
+    <ClInclude Include="AsteroidManager.h" />
+    <ClInclude Include="Asteroid_medium.h" />
     <ClInclude Include="Bullet.h" />
+    <ClInclude Include="Asteroid_small.h" />
     <ClInclude Include="Game2dApp.h" />
-    <ClInclude Include="node.h" />
     <ClInclude Include="Player.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -14,6 +14,12 @@ public:
 
 	std::vector<Bullet> bulletList;
 
+	void setShipRadius(float a_radius);
+	float getShipRadius() const;
+
+	float getPlayerPosX();
+	float getPlayerPosY();
+
 protected:
 	aie::Texture*		m_shipTexture;
 	aie::Texture*		m_ammo;
@@ -23,6 +29,7 @@ protected:
 	float rotation = 0; //radians
 	float direction = 0;
 	float PI = 3.14159;
+	float m_radius = 20.0f;
 	int screenWidth = 1280;
 	int screenHeight = 720;
 

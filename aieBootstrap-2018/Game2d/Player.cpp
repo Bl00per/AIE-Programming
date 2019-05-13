@@ -19,55 +19,39 @@ void Player::update(float deltaTime) {
 	aie::Input* input = aie::Input::getInstance();
 
 	if (input->isKeyDown(aie::INPUT_KEY_UP) && input->isKeyDown(aie::INPUT_KEY_RIGHT)) {
-		positionY += 500.0f * deltaTime;
-		positionX += 500.0f * deltaTime;
-		rotation = 7 * PI / 4;
-		direction = 1;
+		positionY += 450.0f * deltaTime;
+		positionX += 450.0f * deltaTime;
 	}
 
 	else if (input->isKeyDown(aie::INPUT_KEY_UP) && input->isKeyDown(aie::INPUT_KEY_LEFT)) {
-		positionY += 500.0f * deltaTime;
-		positionX -= 500.0f * deltaTime;
-		rotation = PI / 4;
-		direction = 7;
+		positionY += 450.0f * deltaTime;
+		positionX -= 450.0f * deltaTime;
 	}
 
 	else if (input->isKeyDown(aie::INPUT_KEY_DOWN) && input->isKeyDown(aie::INPUT_KEY_RIGHT)) {
-		positionY -= 500.0f * deltaTime;
-		positionX += 500.0f * deltaTime;
-		rotation =   5 * PI / 4;
-		direction = 3;
+		positionY -= 400.0f * deltaTime;
+		positionX += 400.0f * deltaTime;
 	}
 
 	else if (input->isKeyDown(aie::INPUT_KEY_DOWN) && input->isKeyDown(aie::INPUT_KEY_LEFT)) {
-		positionY -= 500.0f * deltaTime;
-		positionX -= 500.0f * deltaTime;
-		rotation = 3 * PI / 4;
-		direction = 5;
+		positionY -= 400.0f * deltaTime;
+		positionX -= 400.0f * deltaTime;
 	}
 
 	else if (input->isKeyDown(aie::INPUT_KEY_UP)) {
 		positionY += 500.0f * deltaTime;
-		rotation = 0;
-		direction = 0;
 	}
 
 	else if (input->isKeyDown(aie::INPUT_KEY_DOWN)) {
-		positionY -= 500.0f * deltaTime;
-		rotation = PI;
-		direction = 4;
+		positionY -= 300.0f * deltaTime;
 	}
 
 	else if (input->isKeyDown(aie::INPUT_KEY_LEFT)) {
 		positionX -= 500.0f * deltaTime;
-		rotation = PI / 2;
-		direction = 6;
 	}
 
 	else if (input->isKeyDown(aie::INPUT_KEY_RIGHT)) {
 		positionX += 500.0f * deltaTime;
-		rotation = -PI / 2;
-		direction = 2;
 	}
 
 	// Screen Boundry
@@ -94,6 +78,7 @@ void Player::update(float deltaTime) {
 		ammo_count--;
 	}
 	
+	// If user is reloading, make the animation reverse until it reaches the first sprite
 	if (is_reloading) {
 		down_sprite--;
 		if (down_sprite == 0)
@@ -125,15 +110,39 @@ void Player::draw(aie::Renderer2D*	m_2dRenderer) {
 
 	// demonstrate animation			Across				Down	Where across/Where down
 	m_2dRenderer->setUVRect((float)across_sprite / 1.0f, (float)down_sprite / 11.0f, 1.0f / 1.0f, 1.0 / 11.0f);
-	m_2dRenderer->drawSprite(m_ammo, 1026, 45, 500, 78);
+	m_2dRenderer->drawSprite(m_ammo, 1026, 45, 500, 78, 0, 1);
 
 
 	// Position and draw the ship
 	m_2dRenderer->setUVRect(0, 0, 1.0f, 1.0f);
 	m_2dRenderer->drawSprite(m_shipTexture, positionX, positionY, 0, 0, rotation, 0.9);
 
+	m_2dRenderer->drawCircle(positionX, positionY, m_radius, 1);
+
 	// Draw bullet
 	for (int i = 0; i < bulletList.size(); i++) {
 		bulletList[i].draw(m_2dRenderer);
 	}
 }
+
+float Player::getPlayerPosX()
+{
+	return positionX;
+}
+
+float Player::getPlayerPosY()
+{
+	return positionY;
+}
+
+void Player::setShipRadius(float a_radius)
+{
+	m_radius = a_radius;
+}
+
+
+float Player::getShipRadius() const
+{
+	return m_radius;
+}
+

@@ -11,8 +11,6 @@ public:
 	virtual void update(float deltaTime);
 	virtual void draw(aie::Renderer2D*	m_2dRenderer);
 
-
-
 protected:
 	aie::Texture* m_bullet;
 	float bulletPosX = 0;

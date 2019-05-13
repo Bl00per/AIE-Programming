@@ -65,6 +65,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Day 08 - Structures and Mis
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Day 29 - State machines", "Day 29 - State machines\Day 29 - State machines.vcxproj", "{F0C3FFB2-59D4-46CE-A5F2-5DC1BDBD4BE6}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Day 30 - Vector2", "Day 30 - Maths\Day 30 - Maths.vcxproj", "{98FA72D6-1BBD-4C20-9B9E-20F5312F4958}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Day 30 - Vector3", "Day 30 - Vector3\Day 30 - Vector3.vcxproj", "{91974C16-49D6-4710-BAEC-65356495B818}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -321,6 +325,22 @@ Global
 		{F0C3FFB2-59D4-46CE-A5F2-5DC1BDBD4BE6}.Release|x64.Build.0 = Release|x64
 		{F0C3FFB2-59D4-46CE-A5F2-5DC1BDBD4BE6}.Release|x86.ActiveCfg = Release|Win32
 		{F0C3FFB2-59D4-46CE-A5F2-5DC1BDBD4BE6}.Release|x86.Build.0 = Release|Win32
+		{98FA72D6-1BBD-4C20-9B9E-20F5312F4958}.Debug|x64.ActiveCfg = Debug|x64
+		{98FA72D6-1BBD-4C20-9B9E-20F5312F4958}.Debug|x64.Build.0 = Debug|x64
+		{98FA72D6-1BBD-4C20-9B9E-20F5312F4958}.Debug|x86.ActiveCfg = Debug|Win32
+		{98FA72D6-1BBD-4C20-9B9E-20F5312F4958}.Debug|x86.Build.0 = Debug|Win32
+		{98FA72D6-1BBD-4C20-9B9E-20F5312F4958}.Release|x64.ActiveCfg = Release|x64
+		{98FA72D6-1BBD-4C20-9B9E-20F5312F4958}.Release|x64.Build.0 = Release|x64
+		{98FA72D6-1BBD-4C20-9B9E-20F5312F4958}.Release|x86.ActiveCfg = Release|Win32
+		{98FA72D6-1BBD-4C20-9B9E-20F5312F4958}.Release|x86.Build.0 = Release|Win32
+		{91974C16-49D6-4710-BAEC-65356495B818}.Debug|x64.ActiveCfg = Debug|x64
+		{91974C16-49D6-4710-BAEC-65356495B818}.Debug|x64.Build.0 = Debug|x64
+		{91974C16-49D6-4710-BAEC-65356495B818}.Debug|x86.ActiveCfg = Debug|Win32
+		{91974C16-49D6-4710-BAEC-65356495B818}.Debug|x86.Build.0 = Debug|Win32
+		{91974C16-49D6-4710-BAEC-65356495B818}.Release|x64.ActiveCfg = Release|x64
+		{91974C16-49D6-4710-BAEC-65356495B818}.Release|x64.Build.0 = Release|x64
+		{91974C16-49D6-4710-BAEC-65356495B818}.Release|x86.ActiveCfg = Release|Win32
+		{91974C16-49D6-4710-BAEC-65356495B818}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
