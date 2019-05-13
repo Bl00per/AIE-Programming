@@ -12,9 +12,9 @@ int main(void)
 	std::cout << v.data[1] << std::endl;
 	std::cout << v.data[2] << std::endl;
 
-	vector_3 result = v + v + v;
-	result = result - result - result;
-	result = v + v + v;
+	vector_3 result = v + v;
+	result = result - result;
+	result = v + v;
 	result = result * 4.0f;
 	result = result / 2.0f;
 
