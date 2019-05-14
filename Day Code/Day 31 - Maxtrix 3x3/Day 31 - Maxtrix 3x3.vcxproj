@@ -119,6 +119,7 @@
     <ClInclude Include="vector_3.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="matrix_3x3.cpp" />
     <ClCompile Include="vector_3.cpp" />
   </ItemGroup>

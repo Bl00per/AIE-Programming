@@ -32,7 +32,11 @@ public:
 				const float a_m10 = 0.0f, const float a_m11 = 1.0f, const float a_m12 = 0.0f,	// Column 2
 				const float a_m20 = 0.0f, const float a_m21 = 0.0f, const float a_m22 = 1.0f);	// Column 3
 
-
 	matrix_3x3(const vector_3& a_right, const vector_3& a_up, const vector_3& a_forward);
+
+	vector_3& operator[](const int a_index);
+	const vector_3& operator[](const int a_index) const;
+
+	matrix_3x3 operator*(const matrix_3x3& a_rhs) const;
 };
 
