@@ -89,20 +89,67 @@ void Application3D::update(float deltaTime) {
 	Gizmos::addTransform(mat4(1));
 
 	// demonstrate a few shapes
-	Gizmos::addAABBFilled(vec3(0), vec3(1), vec4(0, 0.5f, 1, 0.25f));
-	Gizmos::addSphere(vec3(5, 0, 5), 1, 8, 8, vec4(1, 0, 0, 0.5f));
-	Gizmos::addRing(vec3(5, 0, -5), 1, 1.5f, 8, vec4(0, 1, 0, 1));
-	Gizmos::addDisk(vec3(-5, 0, 5), 1, 16, vec4(1, 1, 0, 1));
-	Gizmos::addArc(vec3(-5, 0, -5), 0, 2, 1, 8, vec4(1, 0, 1, 1));
+	// Front wall
+	Gizmos::addAABBFilled(vec3(-4, 1, 0), vec3(1), vec4(0, 0.5f, 1, 0.25f));
+	Gizmos::addAABBFilled(vec3(-4, 3, 0), vec3(1), vec4(0, 0.5f, 1, 0.25f));
+	Gizmos::addAABBFilled(vec3(-4, 5, 0), vec3(1), vec4(0, 0.5f, 1, 0.25f));
+	Gizmos::addAABBFilled(vec3(-2, 1, 0), vec3(1), vec4(0, 0.5f, 1, 0.25f));
+	Gizmos::addAABBFilled(vec3(-2, 3, 0), vec3(1), vec4(0, 0.5f, 1, 0.25f));
+	Gizmos::addAABBFilled(vec3(-2, 5, 0), vec3(1), vec4(0, 0.5f, 1, 0.25f));
+	Gizmos::addAABBFilled(vec3(0, 5, 0), vec3(1), vec4(0, 0.5f, 1, 0.25f));
+	Gizmos::addAABBFilled(vec3(2, 1, 0), vec3(1), vec4(0, 0.5f, 1, 0.25f));
+	Gizmos::addAABBFilled(vec3(2, 3, 0), vec3(1), vec4(0, 0.5f, 1, 0.25f));
+	Gizmos::addAABBFilled(vec3(2, 5, 0), vec3(1), vec4(0, 0.5f, 1, 0.25f));
+	Gizmos::addAABBFilled(vec3(4, 1, 0), vec3(1), vec4(0, 0.5f, 1, 0.25f));
+	Gizmos::addAABBFilled(vec3(4, 3, 0), vec3(1), vec4(0, 0.5f, 1, 0.25f));
+	Gizmos::addAABBFilled(vec3(4, 5, 0), vec3(1), vec4(0, 0.5f, 1, 0.25f));
 
-	mat4 t = glm::rotate(mat4(1), time, glm::normalize(vec3(1, 1, 1)));
-	t[3] = vec4(-2, 0, 0, 1);
-	Gizmos::addCylinderFilled(vec3(0), 0.5f, 1, 5, vec4(0, 1, 1, 1), &t);
+	// Right wall
+	Gizmos::addAABBFilled(vec3(4, 1, -2), vec3(1), vec4(0, 0.5f, 1, 0.25f));
+	Gizmos::addAABBFilled(vec3(4, 3, -2), vec3(1), vec4(0, 0.5f, 1, 0.25f));
+	Gizmos::addAABBFilled(vec3(4, 5, -2), vec3(1), vec4(0, 0.5f, 1, 0.25f));
+	Gizmos::addAABBFilled(vec3(4, 1, -4), vec3(1), vec4(0, 0.5f, 1, 0.25f));
+	Gizmos::addAABBFilled(vec3(4, 3, -4), vec3(1), vec4(0, 0.5f, 1, 0.25f));
+	Gizmos::addAABBFilled(vec3(4, 5, -4), vec3(1), vec4(0, 0.5f, 1, 0.25f));
+	Gizmos::addAABBFilled(vec3(4, 1, -6), vec3(1), vec4(0, 0.5f, 1, 0.25f));
+	Gizmos::addAABBFilled(vec3(4, 3, -6), vec3(1), vec4(0, 0.5f, 1, 0.25f));
+	Gizmos::addAABBFilled(vec3(4, 5, -6), vec3(1), vec4(0, 0.5f, 1, 0.25f));
+	
+	// Back wall
+	Gizmos::addAABBFilled(vec3(-2, 1, -6), vec3(1), vec4(0, 0.5f, 1, 0.25f));
+	Gizmos::addAABBFilled(vec3(-2, 3, -6), vec3(1), vec4(0, 0.5f, 1, 0.25f));
+	Gizmos::addAABBFilled(vec3(-2, 5, -6), vec3(1), vec4(0, 0.5f, 1, 0.25f));
+	Gizmos::addAABBFilled(vec3(0, 1, -6), vec3(1), vec4(0, 0.5f, 1, 0.25f));
+	Gizmos::addAABBFilled(vec3(0, 3, -6), vec3(1), vec4(0, 0.5f, 1, 0.25f));
+	Gizmos::addAABBFilled(vec3(0, 5, -6), vec3(1), vec4(0, 0.5f, 1, 0.25f));
+	Gizmos::addAABBFilled(vec3(2, 1, -6), vec3(1), vec4(0, 0.5f, 1, 0.25f));
+	Gizmos::addAABBFilled(vec3(2, 3, -6), vec3(1), vec4(0, 0.5f, 1, 0.25f));
+	Gizmos::addAABBFilled(vec3(2, 5, -6), vec3(1), vec4(0, 0.5f, 1, 0.25f));
 
-	// demonstrate 2D gizmos
-	Gizmos::add2DAABB(glm::vec2(getWindowWidth() / 2, 100),
-					  glm::vec2(getWindowWidth() / 2 * (fmod(getTime(), 3.f) / 3), 20),
-					  vec4(0, 1, 1, 1));
+	// Left wall
+	Gizmos::addAABBFilled(vec3(-4, 1, -6), vec3(1), vec4(0, 0.5f, 1, 0.25f));
+	Gizmos::addAABBFilled(vec3(-4, 3, -6), vec3(1), vec4(0, 0.5f, 1, 0.25f));
+	Gizmos::addAABBFilled(vec3(-4, 5, -6), vec3(1), vec4(0, 0.5f, 1, 0.25f));
+	Gizmos::addAABBFilled(vec3(-4, 1, -4), vec3(1), vec4(0, 0.5f, 1, 0.25f));
+	Gizmos::addAABBFilled(vec3(-4, 3, -4), vec3(1), vec4(0, 0.5f, 1, 0.25f));
+	Gizmos::addAABBFilled(vec3(-4, 5, -4), vec3(1), vec4(0, 0.5f, 1, 0.25f));
+	Gizmos::addAABBFilled(vec3(-4, 1, -2), vec3(1), vec4(0, 0.5f, 1, 0.25f));
+	Gizmos::addAABBFilled(vec3(-4, 3, -2), vec3(1), vec4(0, 0.5f, 1, 0.25f));
+	Gizmos::addAABBFilled(vec3(-4, 5, -2), vec3(1), vec4(0, 0.5f, 1, 0.25f));	Gizmos::addAABBFilled(vec3(-4, 1, -6), vec3(1), vec4(0, 0.5f, 1, 0.25f));
+
+	//Gizmos::addSphere(vec3(5, 0, 5), 1, 8, 8, vec4(1, 0, 0, 0.5f));
+	//Gizmos::addRing(vec3(5, 0, -5), 1, 1.5f, 8, vec4(0, 1, 0, 1));
+	//Gizmos::addDisk(vec3(-5, 0, 5), 1, 16, vec4(1, 1, 0, 1));
+	//Gizmos::addArc(vec3(-5, 0, -5), 0, 2, 1, 8, vec4(1, 0, 1, 1));
+
+	//mat4 t = glm::rotate(mat4(1), time, glm::normalize(vec3(1, 1, 1)));
+	//t[3] = vec4(-2, 0, 0, 1);
+	//Gizmos::addCylinderFilled(vec3(0), 0.5f, 1, 5, vec4(0, 1, 1, 1), &t);
+
+	//// demonstrate 2D gizmos
+	//Gizmos::add2DAABB(glm::vec2(getWindowWidth() / 2, 100),
+	//				  glm::vec2(getWindowWidth() / 2 * (fmod(getTime(), 3.f) / 3), 20),
+	//				  vec4(0, 1, 1, 1));
 
 	// quit if we press escape
 	if (input->isKeyDown(aie::INPUT_KEY_ESCAPE))

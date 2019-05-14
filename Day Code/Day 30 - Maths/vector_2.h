@@ -56,6 +56,12 @@ public:
 	void normalize();
 	vector_2 normalized() const;
 
+	float dot(const vector_2& a_vector_2) const;
+
+	vector_2 right() const;
+
+	float dot(const vector_2& a_vector_2_A, const vector_2& a_vector_2_B);
+
 	bool operator==(const vector_2& a_rhs) const;
 };
 

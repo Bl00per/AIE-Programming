@@ -106,3 +106,18 @@ bool vector_2::operator==(const vector_2& a_rhs) const
 {
 	return ((x == a_rhs.x) && (y == a_rhs.y));
 }
+
+float vector_2::dot(const vector_2& a_vector_2) const
+{
+	return (x + a_vector_2.x) * (y + a_vector_2.y);
+}
+
+vector_2 vector_2::right() const
+{
+	return { y, -x };
+}
+
+float vector_2::dot(const vector_2& a_vector_2_A, const vector_2& a_vector_2_B)
+{
+	return a_vector_2_A.dot(a_vector_2_B);
+}

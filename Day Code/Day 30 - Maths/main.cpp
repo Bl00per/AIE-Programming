@@ -51,6 +51,14 @@ int main(void)
 
 	result = 5.0f * result;
 
+	v.x = 0.0f;
+	v.normalize();
+	result.normalize();
+
+	float ratio = v.dot(result);
+
+	std::cout << acos(ratio);
+
 	vector_2 copy(result);
 	copy += copy;
 	copy -= copy;
