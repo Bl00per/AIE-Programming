@@ -24,6 +24,11 @@ bool Game2dApp::startup() {
 	asteroidMedium = new Asteroid_medium();
 	asteroidLarge = new Asteroid_large();
 
+	// in ur main function write these two lines it should work
+	mciSendString(L"open \"../bin/sounds/Awaken(Pillar Men Theme).mp3\" type mpegvideo alias backgroundmusic", NULL, 0, NULL);
+	mciSendString(L"setaudio backgroundmusic volume to 200", NULL, 0, NULL);
+	mciSendString(L"play backgroundmusic repeat", NULL, 0, NULL);
+
 	// TODO: remember to change this when redistributing a build!
 	// the following path would be used instead: "./font/consolas.ttf"
 	m_font = new aie::Font("../bin/font/consolas.ttf", 32);

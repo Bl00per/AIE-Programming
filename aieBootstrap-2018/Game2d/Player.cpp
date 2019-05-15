@@ -9,6 +9,9 @@ Player::Player()
 	m_shipTexture = new aie::Texture("../bin/textures/ship.png");
 	m_ammo = new aie::Texture("../bin/textures/ammo.png");
 	m_font = new aie::Font("../bin/font/consolas.ttf", 32);
+
+	mciSendString(L"open \"../bin/sounds/Sound Effect - Missile Launch.mp3\" type mpegvideo alias misslesound", NULL, 0, NULL);
+	mciSendString(L"setaudio misslesound volume to 200", NULL, 0, NULL);
 }
 
 Player::~Player()
@@ -76,6 +79,8 @@ void Player::update(float deltaTime) {
 		// Sends the values to the constructor
 		bulletList.push_back(Bullet(positionX, positionY, rotation, direction));
 		ammo_count--;
+		// Play sound
+		mciSendString(L"play misslesound", NULL, 0, NULL);
 	}
 	
 	// If user is reloading, make the animation reverse until it reaches the first sprite

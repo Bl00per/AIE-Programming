@@ -1,5 +1,7 @@
 #pragma once
+#pragma comment(lib, "Winmm.lib")
 
+#include <Windows.h>
 #include "Application.h"
 #include "Renderer2D.h"
 #include "Player.h"

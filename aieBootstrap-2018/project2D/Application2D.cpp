@@ -10,7 +10,7 @@ Application2D::Application2D()
 
 Application2D::~Application2D() 
 {
-	delete node<int>::g_systemFont;
+
 }
 
 bool Application2D::startup() {
@@ -18,7 +18,6 @@ bool Application2D::startup() {
 	m_2dRenderer = new aie::Renderer2D();
 
 	m_bullet = new aie::Texture("./textures/nuke.png");
-	node<int>::g_systemFont = new aie::Font("./font/consolas.ttf", 32);
 
 	m_font = new aie::Font("./font/consolas_bold.ttf", 32);
 	
@@ -34,8 +33,6 @@ void Application2D::shutdown() {
 	delete m_texture;
 	delete m_shipTexture;
 	delete m_2dRenderer;
-	delete node<int>::g_systemFont;
-	node<int>::g_systemFont = nullptr;
 }
 
 void Application2D::update(float deltaTime) {
