@@ -41,7 +41,13 @@ public:
 	const vector_4& operator[](const int a_index) const;
 
 	matrix_4x4 operator*(const matrix_4x4& a_rhs) const;
-
 	vector_4 operator*(const vector_4& a_rhs) const;
+
+	operator float*();
+	operator const float*() const;
+
+	void setRotateX(float x_rotation){};
+	void setRotateY(float y_rotation){};
+	void setRotateZ(float z_rotation){};
 };
 

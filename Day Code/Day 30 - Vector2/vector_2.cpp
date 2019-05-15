@@ -84,15 +84,15 @@ float vector_2::square_magnitude() const
 
 float vector_2::magnitude() const
 {
-	return sqrt(square_magnitude());
+	return (float)sqrt(square_magnitude());
 }
 
-void vector_2::normalize()
+void vector_2::normalise()
 {
 	*this /= magnitude();
 }
 
-vector_2 vector_2::normalized() const
+vector_2 vector_2::normalised() const
 {
 	return *this / magnitude();
 }
@@ -104,7 +104,7 @@ bool vector_2::operator==(const vector_2& a_rhs) const
 
 float vector_2::dot(const vector_2& a_vector_2) const
 {
-	return (x + a_vector_2.x) * (y + a_vector_2.y);
+	return (x * a_vector_2.x) + (y * a_vector_2.y);
 }
 
 vector_2 vector_2::right() const

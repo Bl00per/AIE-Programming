@@ -67,12 +67,12 @@ float vector_4::magnitude() const
 	return (float)sqrt(square_magnitude());
 }
 
-void vector_4::normalize()
+void vector_4::normalise()
 {
 	*this /= magnitude();
 }
 
-vector_4 vector_4::normalized() const
+vector_4 vector_4::normalise() const
 {
 	return *this / magnitude();
 }
@@ -98,7 +98,7 @@ vector_4 vector_4::cross(const vector_4& a_vector_4) const
 {
 	return	{ y * a_vector_4.z - z * a_vector_4.y,
 			z * a_vector_4.x - x * a_vector_4.z,
-			x * a_vector_4.y - y * a_vector_4.x };
+			x * a_vector_4.y - y * a_vector_4.x, w };
 }
 
 vector_4 vector_4::cross(const vector_4& a_vector_4_A, const vector_4& a_vector_4_B)

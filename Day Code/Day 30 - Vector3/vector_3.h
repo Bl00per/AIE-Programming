@@ -1,7 +1,7 @@
 #pragma once
 
-#ifndef _VECTOR_3_
-#define _VECTOR_3_
+#ifndef _vector_3_
+#define _vector_3_
 
 class vector_3
 {
@@ -32,8 +32,8 @@ public:
 	float square_magnitude() const;
 	float magnitude() const;
 
-	void normalize();
-	vector_3 normalized() const;
+	void normalise();
+	vector_3 normalise() const;
 
 	bool operator==(const vector_3& a_rhs) const;
 
@@ -50,4 +50,4 @@ public:
 
 vector_3 operator*(const float a_lhs, const vector_3& a_rhs);
 
-#endif // !_VECTOR_3_
+#endif // !_vector_3_

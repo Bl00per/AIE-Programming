@@ -52,3 +52,12 @@ vector_3 matrix_3x3::operator*(const vector_3& a_rhs) const
 	};
 }
 
+matrix_3x3::operator float*()
+{
+	return _1D;
+}
+
+matrix_3x3::operator const float*() const
+{
+	return _1D;
+}

@@ -51,8 +51,8 @@ public:
 	float square_magnitude() const;
 	float magnitude() const;
 
-	void normalize();
-	vector_2 normalized() const;
+	void normalise();
+	vector_2 normalised() const;
 
 	float dot(const vector_2& a_vector_2) const;
 

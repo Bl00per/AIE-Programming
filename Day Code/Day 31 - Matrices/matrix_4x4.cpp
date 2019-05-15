@@ -62,3 +62,12 @@ vector_4 matrix_4x4::operator*(const vector_4& a_rhs) const
 	};
 }
 
+matrix_4x4::operator float*()
+{
+	return _1D;
+}
+
+matrix_4x4::operator const float*() const
+{
+	return _1D;
+}

@@ -33,8 +33,8 @@ public:
 	float square_magnitude() const;
 	float magnitude() const;
 
-	void normalize();
-	vector_4 normalized() const;
+	void normalise();
+	vector_4 normalise() const;
 
 	bool operator==(const vector_4& a_rhs) const;
 

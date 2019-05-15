@@ -67,12 +67,12 @@ float vector_3::magnitude() const
 	return (float)sqrt(square_magnitude());
 }
 
-void vector_3::normalize()
+void vector_3::normalise()
 {
 	*this /= magnitude();
 }
 
-vector_3 vector_3::normalized() const
+vector_3 vector_3::normalise() const
 {
 	return *this / magnitude();
 }
