@@ -22,9 +22,7 @@ public:
 		float data[2];
 	};
 
-	//Vector_2();
-	vector_2(const float a_x = 0.0f, const float a_y = 0.0f) 
-		: x(a_x), y(a_y) {};
+	vector_2(const float a_x = 0.0f, const float a_y = 0.0f);
 
 	/*	@brief Subscript operator overloading to allow direct data access
 		@param Index of the data member
@@ -53,8 +51,8 @@ public:
 	float square_magnitude() const;
 	float magnitude() const;
 
-	void normalize();
-	vector_2 normalized() const;
+	void normalise();
+	vector_2 normalised() const;
 
 	float dot(const vector_2& a_vector_2) const;
 

@@ -2,15 +2,10 @@
 #include <cassert>
 #include <math.h>
 
-
-//Vector_2::Vector_2() : x (0.0f), y(0.0f)
-//{
-//}
-
-vector_2::vector_2(const float a_x /*= 0.0f*/, const float a_y /*= 0.0f*/) : x(a_x), y(a_y)
+vector_2::vector_2(const float a_x /*= 0.0f*/, const float a_y /*= 0.0f*/)
+	: data{ a_x, a_y }
 {
 }
-
 
 float& vector_2::operator[](const int a_index)
 {

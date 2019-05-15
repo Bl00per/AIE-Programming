@@ -38,7 +38,13 @@ public:
 	const vector_3& operator[](const int a_index) const;
 
 	matrix_3x3 operator*(const matrix_3x3& a_rhs) const;
-
 	vector_3 operator*(const vector_3& a_rhs) const;
+
+	operator float*();
+	operator const float*() const;
+
+	void setRotateX(float x_rotation){};
+	void setRotateY(float y_rotation){};
+	void setRotateZ(float z_rotation){};
 };
 
