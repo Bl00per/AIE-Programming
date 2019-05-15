@@ -43,8 +43,8 @@ public:
 	operator float*();
 	operator const float*() const;
 
-	void setRotateX(float x_rotation){};
-	void setRotateY(float y_rotation){};
-	void setRotateZ(float z_rotation){};
+	void setRotateX(float x_rotation);
+	void setRotateY(float y_rotation);
+	void setRotateZ(float z_rotation);
 };
 

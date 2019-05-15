@@ -1,5 +1,8 @@
-#include "matrix_3x3.h"
+// For reference: http://mathworld.wolfram.com/RotationMatrix.html
 
+
+#include "matrix_3x3.h"
+#include <cstdlib>
 
 
 matrix_3x3::matrix_3x3(const float a_m00 /*= 1.0f*/, const float a_m01 /*= 0.0f*/, const float a_m02 /*= 0.0f*/,
@@ -60,4 +63,28 @@ matrix_3x3::operator float*()
 matrix_3x3::operator const float*() const
 {
 	return _1D;
+}
+
+void matrix_3x3::setRotateX(float x_rotation)
+{
+	_1D[4] = cos(x_rotation);
+	_1D[5] = sin(x_rotation);
+	_1D[7] = -sin(x_rotation);
+	_1D[8] = cos(x_rotation);
+}
+
+void matrix_3x3::setRotateY(float y_rotation)
+{
+	_1D[0] = cos(y_rotation);
+	_1D[2] = -sin(y_rotation);
+	_1D[6] = sin(y_rotation);
+	_1D[8] = cos(y_rotation);
+}
+
+void matrix_3x3::setRotateZ(float z_rotation)
+{
+	_1D[0] = cos(z_rotation);
+	_1D[1] = sin(z_rotation);
+	_1D[3] = -sin(z_rotation);
+	_1D[4] = cos(z_rotation);
 }

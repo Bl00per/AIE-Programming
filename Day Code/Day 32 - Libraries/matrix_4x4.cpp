@@ -1,4 +1,7 @@
+// For reference: http://mathworld.wolfram.com/RotationMatrix.html
+
 #include "matrix_4x4.h"
+#include <cstdlib>
 
 
 
@@ -70,4 +73,28 @@ matrix_4x4::operator float*()
 matrix_4x4::operator const float*() const
 {
 	return _1D;
+}
+
+void matrix_4x4::setRotateX(float x_rotation)
+{
+	_1D[5] = cos(x_rotation);
+	_1D[6] = sin(x_rotation);
+	_1D[9] = -sin(x_rotation);
+	_1D[10] = cos(x_rotation);
+}
+
+void matrix_4x4::setRotateY(float y_rotation)
+{
+	_1D[0] = cos(y_rotation);
+	_1D[2] = -sin(y_rotation);
+	_1D[8] = sin(y_rotation);
+	_1D[10] = cos(y_rotation);
+}
+
+void matrix_4x4::setRotateZ(float z_rotation)
+{
+	_1D[0] = cos(z_rotation);
+	_1D[1] = sin(z_rotation);
+	_1D[4] = -sin(z_rotation);
+	_1D[5] = cos(z_rotation);
 }

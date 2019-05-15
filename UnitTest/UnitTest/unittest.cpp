@@ -273,7 +273,7 @@ bool runUnitTests() {
 	TEST("Vector3 matrix translation B", v3c, Vector3(86.0490112305f, 83.2981109619f, 1));
 	TEST("Vector4 matrix translation A", v4b, Vector4(68.5f, -4.23f, 45, 1));
 	TEST("Vector4 matrix translation B", v4c, Vector4(86.0490112305f, 83.2981109619f, 45, 1));
-
+	
 	// homogeneous vector translation
 	m3b = Matrix3(1, 0, 0,
 				  0, 1, 0,
