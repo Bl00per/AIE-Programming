@@ -6,6 +6,8 @@
 #include "Font.h"
 #include "Input.h"
 #include "matrix_3x3.h"
+#include "game_object.h"
+#include "linked_list.h"
 
 class Application2D : public aie::Application {
 public:
@@ -19,6 +21,7 @@ public:
 	virtual void update(float deltaTime);
 	virtual void draw();
 
+	linked_list<game_object*> my_list;
 
 protected:
 
@@ -27,37 +30,28 @@ protected:
 	aie::Font*			m_font;
 
 	// Sun
-	aie::Texture* m_toddchan;
-	matrix_3x3 todd_world_transform;
-	matrix_3x3 todd_local_transform;
+	aie::Texture* toddchan_texture;
+	game_object* toddchan;
 
 	// Planet doom
-	aie::Texture* m_PlanetDoom;
-	matrix_3x3 doom_local_transform;
-	matrix_3x3 doom_world_transform;
-	float doom_rotation; // Object rotation rate in radians/second
-	float doom_orbit;
+	aie::Texture* planetDoom_texture;
+	game_object* planetDoom;
 
 	// Planet skyrim
-	aie::Texture* m_PlanetSkyrim;
-	matrix_3x3 skyrim_local_transform;
-	matrix_3x3 skyrim_world_transform;
-	float skyrim_rotation; // Object rotation rate in radians/second
-	float skyrim_orbit;
+	aie::Texture* planetSkyrim_texture;
+	game_object* planetSkyrim;
 
 	// Fallout4 planet
-	aie::Texture* m_PlanetF4;
-	matrix_3x3 fallout4_local_transform;
-	matrix_3x3 fallout4_world_transform;
-	float fallout4_rotation; // Object rotation rate in radians/second
-	float fallout4_orbit; // Object orbit as an angle rate in radians/second
+	aie::Texture* planetF4_texture;
+	game_object* planetF4;
 
 	// Fallout76 planet
-	aie::Texture* m_PlanetF76;
-	matrix_3x3 fallout76_local_transform;
-	matrix_3x3 fallout76_world_transform;
-	float fallout76_rotation; // Object rotation rate in radians/second
-	float fallout76_orbit; // Object orbit as an angle rate in radians/second
+	aie::Texture* planetF76_texture;
+	game_object* planetF76;
+
+	// Energy ball
+	aie::Texture* energy_ball_texture;
+	game_object* energy_ball;
 
 	float m_timer;
 };

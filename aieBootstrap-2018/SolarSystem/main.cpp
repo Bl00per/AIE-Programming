@@ -6,7 +6,7 @@ int main() {
 	auto app = new Application2D();
 
 	// initialise and loop
-	app->run("AIE", 1680, 1050, true);
+	app->run("AIE", 1680, 1050, false);
 
 	// deallocation
 	delete app;
