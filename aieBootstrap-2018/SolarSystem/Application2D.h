@@ -7,7 +7,6 @@
 #include "Input.h"
 #include "matrix_3x3.h"
 #include "game_object.h"
-#include "linked_list.h"
 
 class Application2D : public aie::Application {
 public:
@@ -20,8 +19,6 @@ public:
 
 	virtual void update(float deltaTime);
 	virtual void draw();
-
-	linked_list<game_object*> my_list;
 
 protected:
 

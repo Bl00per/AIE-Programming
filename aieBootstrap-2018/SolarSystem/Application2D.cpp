@@ -44,6 +44,7 @@ bool Application2D::startup()
 	toddchan->m_world_matrix = matrix_3x3();
 
 	m_timer = 0;
+	planetF4->m_acceleration = 10.0f;
 
 	return true;
 }
@@ -68,11 +69,63 @@ void Application2D::update(float deltaTime) {
 	planetSkyrim->update(deltaTime);
 	planetF4->update(deltaTime);
 	planetF76->update(deltaTime);
-	//energy_ball->update(deltaTime);
-
 
 	// input example
 	aie::Input* input = aie::Input::getInstance();
+
+	if (input->isKeyDown(aie::INPUT_KEY_W))
+	{
+		planetF4->m_speed = 20.0f;
+	}
+	else if (input->isKeyDown(aie::INPUT_KEY_S))
+	{
+		planetF4->m_speed = -20.0f;
+	}
+	else
+	{
+		planetF4->m_speed = 0.0f;
+	}
+
+	if (input->isKeyDown(aie::INPUT_KEY_A))
+	{
+		planetF4->m_spin_speed = 2.0f;
+	}
+	else if (input->isKeyDown(aie::INPUT_KEY_D))
+	{
+		planetF4->m_spin_speed = -2.0f;
+	}
+	else
+	{
+		planetF4->m_spin_speed = 0.0f;
+	}
+
+
+	if (input->isKeyDown(aie::INPUT_KEY_UP))
+	{
+		planetF76->m_speed = 10.0f;
+	}
+	else if (input->isKeyDown(aie::INPUT_KEY_DOWN))
+	{
+		planetF76->m_speed = -10.0f;
+	}
+	else
+	{
+		planetF76->m_speed = 0.0f;
+	}
+
+	if (input->isKeyDown(aie::INPUT_KEY_LEFT))
+	{
+		planetF76->m_spin_speed = 2.0f;
+	}
+	else if (input->isKeyDown(aie::INPUT_KEY_RIGHT))
+	{
+		planetF76->m_spin_speed = -2.0f;
+	}
+	else
+	{
+		planetF76->m_spin_speed = 0.0f;
+	}
+
 
 	// exit the application
 	if (input->isKeyDown(aie::INPUT_KEY_ESCAPE))
@@ -106,6 +159,21 @@ void Application2D::draw() {
 	m_2dRenderer->drawSpriteTransformed3x3(planetF76->m_texture, planetF76->m_world_matrix, 50.0f, 50.0f);
 
 	//m_2dRenderer->drawSpriteTransformed3x3(energy_ball->m_texture, energy_ball->m_world_matrix, 50.0f, 50.0f);
+
+
+	plane p{ {1,0}, -10 };
+	vector_2 centre = p.m_normal * p.m_distance;
+	vector_2 perpendicular = { p.m_normal.y, -p.m_normal.x };
+	vector_2 end_1 = centre + perpendicular * 500.0f;
+	vector_2 end_2 = centre - perpendicular * 500.0f;
+
+	m_2dRenderer->drawLine(end_1.x, end_2.y, end_2.x, end_2.y);
+
+	circle c{ {400,400}, 50 };
+	m_2dRenderer->drawCircle(c.m_position.x, c.m_position.y, c.m_radius);
+
+	//AABB aabb{ {200,400}, {50, 100} };
+	//m_2dRenderer->drawBox(aabb.m_position.x, aabb.m_position.y, );
 
 
 	// output some text, uses the last used colour

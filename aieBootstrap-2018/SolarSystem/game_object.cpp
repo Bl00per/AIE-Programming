@@ -16,10 +16,29 @@ game_object::game_object(aie::Texture* a_texture,
 	m_parent = nullptr;
 	m_local_matrix.setRotateZ(m_current_rotation);
 	m_local_matrix.forward = { a_position.x, a_position.y, 1 };
+
+	m_speed = 0;
+	m_max_speed = 500;
+	m_acceleration = 0;
 }
 
 void game_object::update(const float deltaTime)
 {
+	// Delta V
+	m_speed += m_acceleration * deltaTime;
+	// Position change
+	m_local_matrix.forward += m_local_matrix.forward * m_speed * deltaTime;
+
+
+	//if (m_speed > m_max_speed)
+	//{
+	//	m_speed = m_max_speed;
+	//}
+	//if (m_speed < -m_max_speed)
+	//{
+	//	m_speed = -m_max_speed;
+	//}
+
 	// ***PLANET DOOM***
 	// Spinning
 	matrix_3x3 rotation_matrix;

@@ -3,6 +3,25 @@
 #include "vector_2.h"
 #include "Renderer2D.h"
 
+struct plane
+{
+	vector_2 m_normal;
+	float m_distance;
+};
+
+struct circle
+{
+	vector_2 m_position;
+	float m_radius;
+};
+
+struct AABB
+{
+	vector_2 m_position;
+	vector_2 m_extents;
+};
+
+
 class game_object
 {
 public:
@@ -27,9 +46,12 @@ public:
 	matrix_3x3 m_local_matrix;
 
 	vector_2 m_position;
-	float m_current_rotation;	// Radians / second
+	float m_current_rotation;	// Radians
 	float m_orbit_speed;		// Radians / second
 	float m_spin_speed;			// Radians / second
+	float m_speed;
+	float m_max_speed;
+	float m_acceleration;
 
 	aie::Texture* m_texture;
 	vector_2 m_texture_size;

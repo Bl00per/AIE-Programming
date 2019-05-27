@@ -19,6 +19,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Game2d", "Game2d\Game2d.vcx
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SolarSystem", "SolarSystem\SolarSystem.vcxproj", "{D0039B7B-5D94-4289-AEA8-89DA286F5704}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AstralAbyss", "AstralAbyss\AstralAbyss.vcxproj", "{A83148B6-D0D9-426F-B76C-D32E3A18C4AE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -67,6 +69,12 @@ Global
 		{D0039B7B-5D94-4289-AEA8-89DA286F5704}.Release|x64.Build.0 = Release|x64
 		{D0039B7B-5D94-4289-AEA8-89DA286F5704}.Release|x86.ActiveCfg = Release|Win32
 		{D0039B7B-5D94-4289-AEA8-89DA286F5704}.Release|x86.Build.0 = Release|Win32
+		{A83148B6-D0D9-426F-B76C-D32E3A18C4AE}.Debug|x64.ActiveCfg = Debug|Win32
+		{A83148B6-D0D9-426F-B76C-D32E3A18C4AE}.Debug|x86.ActiveCfg = Debug|Win32
+		{A83148B6-D0D9-426F-B76C-D32E3A18C4AE}.Debug|x86.Build.0 = Debug|Win32
+		{A83148B6-D0D9-426F-B76C-D32E3A18C4AE}.Release|x64.ActiveCfg = Release|Win32
+		{A83148B6-D0D9-426F-B76C-D32E3A18C4AE}.Release|x86.ActiveCfg = Release|Win32
+		{A83148B6-D0D9-426F-B76C-D32E3A18C4AE}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
