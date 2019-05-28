@@ -19,6 +19,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="aligned_bounding_box.cpp" />
+    <ClCompile Include="base_conversion.cpp" />
+    <ClCompile Include="circle.cpp" />
+    <ClCompile Include="collider.cpp" />
+    <ClCompile Include="line.cpp" />
     <ClCompile Include="matrix_3x3.cpp" />
     <ClCompile Include="matrix_4x4.cpp" />
     <ClCompile Include="vector_2.cpp" />
@@ -26,6 +31,11 @@
     <ClCompile Include="vector_4.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="aligned_bounding_box.h" />
+    <ClInclude Include="base_conversion.h" />
+    <ClInclude Include="circle.h" />
+    <ClInclude Include="collider.h" />
+    <ClInclude Include="line.h" />
     <ClInclude Include="matrix_3x3.h" />
     <ClInclude Include="matrix_4x4.h" />
     <ClInclude Include="vector_2.h" />

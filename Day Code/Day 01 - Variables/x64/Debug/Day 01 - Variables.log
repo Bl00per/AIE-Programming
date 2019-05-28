@@ -1,5 +1,0 @@
-﻿  Variables.cpp
-c:\users\s172172\desktop\aie-programming\day code\day 01 - variables\variables.cpp(9): warning C4305: 'initializing': truncation from '__int64' to 'long'
-c:\users\s172172\desktop\aie-programming\day code\day 01 - variables\variables.cpp(9): warning C4309: 'initializing': truncation of constant value
-c:\users\s172172\desktop\aie-programming\day code\day 01 - variables\variables.cpp(29): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-  Day 01 - Variables.vcxproj -> C:\Users\s172172\Desktop\AIE-Programming\Day Code\x64\Debug\Day 01 - Variables.exe
