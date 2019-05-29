@@ -3,25 +3,6 @@
 #include "vector_2.h"
 #include "Renderer2D.h"
 
-struct plane
-{
-	vector_2 m_normal;
-	float m_distance;
-};
-
-struct circle
-{
-	vector_2 m_position;
-	float m_radius;
-};
-
-struct AABB
-{
-	vector_2 m_position;
-	vector_2 m_extents;
-};
-
-
 class game_object
 {
 public:

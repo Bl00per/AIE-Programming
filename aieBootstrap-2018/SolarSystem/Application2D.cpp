@@ -30,12 +30,12 @@ bool Application2D::startup()
 
 	// Planet F4 data
 	planetF4_texture = new aie::Texture("./textures/PlanetFallout4.png");
-	planetF4 = new game_object(planetF4_texture, { 280.0f, 0.0f }, 0.0f, 2.0f, 3.14159f);
+	planetF4 = new game_object(planetF4_texture, { 280.0f, 0.0f }, 0.0f, 2.0f/*, 3.14159f*/);
 	planetF4->set_parent(toddchan);
 
 	// Planet F76 data
 	planetF76_texture = new aie::Texture("./textures/PlanetFallout76.png");
-	planetF76 = new game_object(planetF76_texture, { 100.0f, 0.0f },  0.0f,  -3.14159, -3.14159f * 0.5f);
+	planetF76 = new game_object(planetF76_texture, { 100.0f, 0.0f },  0.0f,  -3.14159/*, -3.14159f * 0.5f*/);
 	planetF76->set_parent(planetF4);
 
 	energy_ball_texture = new aie::Texture("./textures/energyBallBlue.png");
@@ -44,7 +44,7 @@ bool Application2D::startup()
 	toddchan->m_world_matrix = matrix_3x3();
 
 	m_timer = 0;
-	planetF4->m_acceleration = 10.0f;
+	//planetF4->m_acceleration = 10.0f;
 
 	return true;
 }
@@ -73,26 +73,35 @@ void Application2D::update(float deltaTime) {
 	// input example
 	aie::Input* input = aie::Input::getInstance();
 
+
+
 	if (input->isKeyDown(aie::INPUT_KEY_W))
 	{
-		planetF4->m_speed = 20.0f;
+		planetF4->m_acceleration = 100.0f;
+	}
+	else if (input->isKeyUp(aie::INPUT_KEY_W) && planetF4->m_speed >= 0.0f)
+	{
+		planetF4->m_acceleration = -(deltaTime * 5000.0f);
 	}
 	else if (input->isKeyDown(aie::INPUT_KEY_S))
 	{
-		planetF4->m_speed = -20.0f;
+		planetF4->m_acceleration = -50.0f;
 	}
 	else
 	{
 		planetF4->m_speed = 0.0f;
 	}
 
+
+	std::cout << planetF4->m_speed << std::endl;
+
 	if (input->isKeyDown(aie::INPUT_KEY_A))
 	{
-		planetF4->m_spin_speed = 2.0f;
+		planetF4->m_spin_speed = 3.2f;
 	}
 	else if (input->isKeyDown(aie::INPUT_KEY_D))
 	{
-		planetF4->m_spin_speed = -2.0f;
+		planetF4->m_spin_speed = -3.2f;
 	}
 	else
 	{
@@ -102,11 +111,11 @@ void Application2D::update(float deltaTime) {
 
 	if (input->isKeyDown(aie::INPUT_KEY_UP))
 	{
-		planetF76->m_speed = 10.0f;
+		planetF76->m_acceleration= 20.0f;
 	}
 	else if (input->isKeyDown(aie::INPUT_KEY_DOWN))
 	{
-		planetF76->m_speed = -10.0f;
+		planetF76->m_acceleration = -20.0f;
 	}
 	else
 	{
@@ -161,19 +170,19 @@ void Application2D::draw() {
 	//m_2dRenderer->drawSpriteTransformed3x3(energy_ball->m_texture, energy_ball->m_world_matrix, 50.0f, 50.0f);
 
 
-	plane p{ {1,0}, -10 };
-	vector_2 centre = p.m_normal * p.m_distance;
-	vector_2 perpendicular = { p.m_normal.y, -p.m_normal.x };
+	line p{ {1,0}, -1200 };
+	vector_2 centre = p.get_normal() * p.get_distance();
+	vector_2 perpendicular = { p.get_normal().y, -p.get_normal().x };
 	vector_2 end_1 = centre + perpendicular * 500.0f;
 	vector_2 end_2 = centre - perpendicular * 500.0f;
 
 	m_2dRenderer->drawLine(end_1.x, end_2.y, end_2.x, end_2.y);
 
 	circle c{ {400,400}, 50 };
-	m_2dRenderer->drawCircle(c.m_position.x, c.m_position.y, c.m_radius);
+	m_2dRenderer->drawCircle(c.get_position().x, c.get_position().y, c.get_radius());
 
-	//AABB aabb{ {200,400}, {50, 100} };
-	//m_2dRenderer->drawBox(aabb.m_position.x, aabb.m_position.y, );
+	aligned_bounding_box aabb{ {200,400}, {50, 100} };
+	m_2dRenderer->drawBox(aabb.get_position().x, aabb.get_position().y, aabb.get_extents().x, aabb.get_extents().y);
 
 
 	// output some text, uses the last used colour

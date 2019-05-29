@@ -45,6 +45,9 @@
     <ClCompile Include="aligned_bounding_box.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="collision_manager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="matrix_4x4.h">
@@ -75,6 +78,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="aligned_bounding_box.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="collision_manager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

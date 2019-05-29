@@ -1,5 +1,6 @@
 #pragma once
 
+#include <iostream>
 #include "Application.h"
 #include "Renderer2D.h"
 #include "Texture.h"
@@ -7,6 +8,9 @@
 #include "Input.h"
 #include "matrix_3x3.h"
 #include "game_object.h"
+#include "aligned_bounding_box.h"
+#include "line.h"
+#include "circle.h"
 
 class Application2D : public aie::Application {
 public:

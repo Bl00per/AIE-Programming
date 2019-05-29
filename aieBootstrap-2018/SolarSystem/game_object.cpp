@@ -18,7 +18,7 @@ game_object::game_object(aie::Texture* a_texture,
 	m_local_matrix.forward = { a_position.x, a_position.y, 1 };
 
 	m_speed = 0;
-	m_max_speed = 500;
+	m_max_speed = 500.0f;
 	m_acceleration = 0;
 }
 
@@ -27,17 +27,17 @@ void game_object::update(const float deltaTime)
 	// Delta V
 	m_speed += m_acceleration * deltaTime;
 	// Position change
-	m_local_matrix.forward += m_local_matrix.forward * m_speed * deltaTime;
+	m_local_matrix.forward += m_local_matrix.up * m_speed * deltaTime;
 
 
-	//if (m_speed > m_max_speed)
-	//{
-	//	m_speed = m_max_speed;
-	//}
-	//if (m_speed < -m_max_speed)
-	//{
-	//	m_speed = -m_max_speed;
-	//}
+	if (m_speed > m_max_speed)
+	{
+		m_speed = m_max_speed;
+	}
+	if (m_speed < -m_max_speed)
+	{
+		m_speed = -m_max_speed;
+	}
 
 	// ***PLANET DOOM***
 	// Spinning
