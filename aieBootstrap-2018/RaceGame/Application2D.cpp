@@ -19,10 +19,10 @@ bool Application2D::startup()
 
 	// Race Car data
 	car_texture = new aie::Texture("./textures/car.png");
-	playerCar = new game_object(car_texture, { 640.0f, 360.0f }, 0.0f, 2.0f/*, 3.14159f*/);
+	playerCar = new game_object(car_texture, { xPos, yPos }, ( 52 * M_PI / 180), 2/*, 3.14159f*/);
 
 	//energy_ball_texture = new aie::Texture("./textures/energyBallBlue.png");
-	//energy_ball = new game_object(energy_ball_texture, { 840.0f, 525.0f }, 0.0f);
+	//energy_ball = new game_object(energy_ball_texture, { 840, 525 }, 0);
 
 	m_timer = 0;
 
@@ -50,21 +50,40 @@ void Application2D::update(float deltaTime) {
 	// Acceleration
 	if (input->isKeyDown(aie::INPUT_KEY_W))
 	{
-		playerCar->m_acceleration = 100.0f;
+		playerCar->m_acceleration = 100;
 	}
-	else if (input->isKeyUp(aie::INPUT_KEY_W) && playerCar->m_speed >= 0.0f)
+	// Slowing down after letting go of accelerator
+	else if (input->isKeyUp(aie::INPUT_KEY_W) &&
+		input->isKeyUp(aie::INPUT_KEY_S) &&
+		playerCar->m_speed > 0)
 	{
-		playerCar->m_acceleration = -80.0f;
+		if (playerCar->m_speed < 0)
+		{
+			playerCar->m_acceleration = 80;
+		}
+		if (playerCar->m_speed > 0)
+		{
+			playerCar->m_acceleration = -80;
+		}
 	}
-	// Reverse / Stopping
+	//else if (input->isKeyUp(aie::INPUT_KEY_S) && 
+	//	playerCar->m_speed > 0)
+	//{
+	//	playerCar->m_acceleration = 80;
+	//}
+	// Reverse / Slowdown / Stopping
 	else if (input->isKeyDown(aie::INPUT_KEY_S))
 	{
-		playerCar->m_acceleration = -200.0f;
+		playerCar->m_acceleration = -200;
+	}
+	else if (input->isKeyUp(aie::INPUT_KEY_W) && playerCar->m_speed > 0 && input->isKeyUp(aie::INPUT_KEY_S))
+	{
+		playerCar->m_acceleration = 80;
 	}
 	// Keep the car stopped
 	else
 	{
-		playerCar->m_speed = 0.0f;
+		playerCar->m_speed = 0;
 	}
 
 	// Turning the car
@@ -79,7 +98,41 @@ void Application2D::update(float deltaTime) {
 	// Keep the car facing its current direction
 	else
 	{
-		playerCar->m_spin_speed = 0.0f;
+		playerCar->m_spin_speed = 0;
+	}
+
+	// Drifting
+	if (input->isKeyDown(aie::INPUT_KEY_A) &&
+		input->isKeyDown(aie::INPUT_KEY_LEFT_SHIFT) && 
+		playerCar->m_speed >= 0)
+	{
+		playerCar->m_acceleration = -50;
+		playerCar->m_spin_speed = 5.5f;
+	}
+	else if (input->isKeyDown(aie::INPUT_KEY_D) &&
+		input->isKeyDown(aie::INPUT_KEY_LEFT_SHIFT)
+		&& playerCar->m_speed >= 0)
+	{
+		playerCar->m_acceleration = -50;
+		playerCar->m_spin_speed = -5.5f;
+	}
+
+	// Out of bounds
+	if (xPos > 1280.0f)
+	{
+		xPos = 1280.0f;
+	}
+	else if (xPos < 0)
+	{
+		xPos = 0.0f;
+	}
+	else if (yPos > 720.0f)
+	{
+		yPos = 720.0f;
+	}
+	else if (yPos < 0.0f)
+	{
+		yPos = 0.0f;
 	}
 
 	// exit the application
@@ -98,12 +151,12 @@ void Application2D::draw() {
 	m_2dRenderer->setUVRect(0, 0, 1, 1);
 
 	// Draw race track
-	m_2dRenderer->drawSprite(raceTrack, 640, 360, 0.0f, 0.0f, 0.0f, 1.0f);
+	m_2dRenderer->drawSprite(raceTrack, 640, 360, 0, 0, 0, 1);
 	
 	// Draw car sprite
 	m_2dRenderer->drawSpriteTransformed3x3(playerCar->m_texture, playerCar->m_world_matrix);
 	
-	//m_2dRenderer->drawSpriteTransformed3x3(energy_ball->m_texture, energy_ball->m_world_matrix, 50.0f, 50.0f);
+	//m_2dRenderer->drawSpriteTransformed3x3(energy_ball->m_texture, energy_ball->m_world_matrix, 50, 50);
 
 	// output some text, uses the last used colour
 	char fps[32];

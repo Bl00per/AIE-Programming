@@ -1,6 +1,9 @@
 #pragma once
 
+#define _USE_MATH_DEFINES
+
 #include <iostream>
+#include <cmath>
 #include "Application.h"
 #include "Renderer2D.h"
 #include "Texture.h"
@@ -32,9 +35,11 @@ protected:
 	// Race track
 	aie::Texture* raceTrack;
 
-	// Fallout4 planet
+	// Car object
 	aie::Texture* car_texture;
 	game_object* playerCar;
+	float xPos = 530;
+	float yPos = 370;
 
 
 	float m_timer;
