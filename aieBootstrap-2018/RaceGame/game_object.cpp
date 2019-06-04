@@ -18,7 +18,7 @@ game_object::game_object(aie::Texture* a_texture,
 	m_local_matrix.forward = { a_position.x, a_position.y, 1 };
 
 	m_speed = 0;
-	m_max_speed = 375;
+	m_max_speed = 0;
 	m_max_reverse_speed = -100;
 	m_acceleration = 0;
 }

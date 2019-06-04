@@ -1,9 +1,9 @@
 #include "line.h"
 
 
-const vector_2 line::DEFAULT_NORMAL = { 1.0f, 0.0f };
+const Vector2 line::DEFAULT_NORMAL = { 1.0f, 0.0f };
 
-line::line(const vector_2& a_normal /*= { 1.0f, 0.0f }*/,
+line::line(const Vector2& a_normal /*= { 1.0f, 0.0f }*/,
 	const float a_distance /*= 0.0f*/) :
 	m_normal(a_normal),
 	m_distance(a_distance),
@@ -12,12 +12,12 @@ line::line(const vector_2& a_normal /*= { 1.0f, 0.0f }*/,
 	set_normal(m_normal);
 }
 
-const vector_2 line::get_normal() const
+const Vector2 line::get_normal() const
 {
 	return m_normal;
 }
 
-void line::set_normal(const vector_2& a_normal)
+void line::set_normal(const Vector2& a_normal)
 {
 	if (m_normal.square_magnitude() < std::numeric_limits<float>::min())
 	{

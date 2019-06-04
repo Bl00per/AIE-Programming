@@ -1,7 +1,7 @@
 #pragma once
-#include "vector_4.h"
+#include "Vector4.h"
 
-class matrix_4x4
+class Matrix4
 {
 public:
 	union
@@ -19,29 +19,29 @@ public:
 
 		struct 
 		{
-			vector_4 right;
-			vector_4 up;
-			vector_4 forward;
-			vector_4 position;
+			Vector4 right;
+			Vector4 up;
+			Vector4 forward;
+			Vector4 position;
 		};
 
-		vector_4 axes[4];
+		Vector4 axes[4];
 	};
 
 
 
-	matrix_4x4(	const float a_m00 = 1.0f, const float a_m01 = 0.0f, const float a_m02 = 0.0f, const float a_m03 = 0.0f,	// Column 1
+	Matrix4(	const float a_m00 = 1.0f, const float a_m01 = 0.0f, const float a_m02 = 0.0f, const float a_m03 = 0.0f,	// Column 1
 				const float a_m10 = 0.0f, const float a_m11 = 1.0f, const float a_m12 = 0.0f, const float a_m13 = 0.0f,	// Column 2
 				const float a_m20 = 0.0f, const float a_m21 = 0.0f, const float a_m22 = 1.0f, const float a_m23 = 0.0f,	// Column 3
 				const float a_m30 = 0.0f, const float a_m31 = 0.0f, const float a_m32 = 0.0f, const float a_m33 = 1.0f);// Column 4
 
-	matrix_4x4(const vector_4& a_right, const vector_4& a_up, const vector_4& a_forward, vector_4& a_position);
+	Matrix4(const Vector4& a_right, const Vector4& a_up, const Vector4& a_forward, Vector4& a_position);
 
-	vector_4& operator[](const int a_index);
-	const vector_4& operator[](const int a_index) const;
+	Vector4& operator[](const int a_index);
+	const Vector4& operator[](const int a_index) const;
 
-	matrix_4x4 operator*(const matrix_4x4& a_rhs) const;
-	vector_4 operator*(const vector_4& a_rhs) const;
+	Matrix4 operator*(const Matrix4& a_rhs) const;
+	Vector4 operator*(const Vector4& a_rhs) const;
 
 	operator float*();
 	operator const float*() const;

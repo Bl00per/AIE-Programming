@@ -27,6 +27,14 @@ public:
 	virtual void update(float deltaTime);
 	virtual void draw();
 
+	void carControl(float deltaTime);
+
+	int getGear()
+	{
+		return currentGear;
+	}
+
+
 protected:
 
 	aie::Renderer2D*	m_2dRenderer;
@@ -38,6 +46,9 @@ protected:
 	// Car object
 	aie::Texture* car_texture;
 	game_object* playerCar;
+	int currentAcceleration = 0;
+	int currentGear = 0;
+	int maxGear = 7;
 	float xPos = 530;
 	float yPos = 370;
 

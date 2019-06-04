@@ -25,11 +25,11 @@
     <ClCompile Include="collider.cpp" />
     <ClCompile Include="collision_manager.cpp" />
     <ClCompile Include="line.cpp" />
-    <ClCompile Include="matrix_3x3.cpp" />
-    <ClCompile Include="matrix_4x4.cpp" />
-    <ClCompile Include="vector_2.cpp" />
-    <ClCompile Include="vector_3.cpp" />
-    <ClCompile Include="vector_4.cpp" />
+    <ClCompile Include="Matrix3.cpp" />
+    <ClCompile Include="Matrix4.cpp" />
+    <ClCompile Include="Vector2.cpp" />
+    <ClCompile Include="Vector3.cpp" />
+    <ClCompile Include="Vector4.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="aligned_bounding_box.h" />
@@ -38,11 +38,11 @@
     <ClInclude Include="collider.h" />
     <ClInclude Include="collision_manager.h" />
     <ClInclude Include="line.h" />
-    <ClInclude Include="matrix_3x3.h" />
-    <ClInclude Include="matrix_4x4.h" />
-    <ClInclude Include="vector_2.h" />
-    <ClInclude Include="vector_3.h" />
-    <ClInclude Include="vector_4.h" />
+    <ClInclude Include="Matrix3.h" />
+    <ClInclude Include="Matrix4.h" />
+    <ClInclude Include="Vector2.h" />
+    <ClInclude Include="Vector3.h" />
+    <ClInclude Include="Vector4.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

@@ -31,10 +31,10 @@ public:
 	float m_orbit_speed;		// Radians / second
 	float m_spin_speed;			// Radians / second
 	
-	int m_speed;
-	int m_max_speed;
-	int m_max_reverse_speed;
-	int m_acceleration;
+	float m_speed;
+	float m_max_speed;
+	float m_max_reverse_speed;
+	float m_acceleration;
 
 	aie::Texture* m_texture;
 	vector_2 m_texture_size;

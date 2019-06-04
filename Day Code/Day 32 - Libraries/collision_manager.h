@@ -15,7 +15,7 @@ public:
 	
 
 private:
-	static vector_2 clamp(const vector_2& a_vector_2, const vector_2& a_min, const vector_2& a_max);
+	static Vector2 clamp(const Vector2& a_Vector2, const Vector2& a_min, const Vector2& a_max);
 
 
 };

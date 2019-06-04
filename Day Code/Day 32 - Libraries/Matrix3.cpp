@@ -1,33 +1,33 @@
 // For reference: http://mathworld.wolfram.com/RotationMatrix.html
 
 
-#include "matrix_3x3.h"
+#include "Matrix3.h"
 #include <cstdlib>
 
 
-matrix_3x3::matrix_3x3(const float a_m00 /*= 1.0f*/, const float a_m01 /*= 0.0f*/, const float a_m02 /*= 0.0f*/,
+Matrix3::Matrix3(const float a_m00 /*= 1.0f*/, const float a_m01 /*= 0.0f*/, const float a_m02 /*= 0.0f*/,
 	const float a_m10 /*= 0.0f*/, const float a_m11 /*= 1.0f*/, const float a_m12 /*= 0.0f*/,
 	const float a_m20 /*= 0.0f*/, const float a_m21 /*= 0.0f*/, const float a_m22 /*= 1.0f*/) :
 	_2D{ a_m00, a_m01, a_m02, a_m10, a_m11, a_m12, a_m20, a_m21, a_m22 }
 {}
 
-matrix_3x3::matrix_3x3(const vector_3& a_right, const vector_3& a_up, const vector_3& a_forward) :
+Matrix3::Matrix3(const Vector3& a_right, const Vector3& a_up, const Vector3& a_forward) :
 	axes{ a_right, a_up, a_forward }
 {
 
 }
 
-vector_3& matrix_3x3::operator[](const int a_index)
+Vector3& Matrix3::operator[](const int a_index)
 {
 	return axes[a_index];
 }
 
-const vector_3& matrix_3x3::operator[](const int a_index) const
+const Vector3& Matrix3::operator[](const int a_index) const
 {
 	return axes[a_index];
 }
 
-matrix_3x3 matrix_3x3::operator*(const matrix_3x3& a_rhs) const
+Matrix3 Matrix3::operator*(const Matrix3& a_rhs) const
 {
 	return 
 	{
@@ -45,7 +45,7 @@ matrix_3x3 matrix_3x3::operator*(const matrix_3x3& a_rhs) const
 	};
 }
 
-vector_3 matrix_3x3::operator*(const vector_3& a_rhs) const
+Vector3 Matrix3::operator*(const Vector3& a_rhs) const
 {
 	return
 	{
@@ -55,17 +55,17 @@ vector_3 matrix_3x3::operator*(const vector_3& a_rhs) const
 	};
 }
 
-matrix_3x3::operator float*()
+Matrix3::operator float*()
 {
 	return _1D;
 }
 
-matrix_3x3::operator const float*() const
+Matrix3::operator const float*() const
 {
 	return _1D;
 }
 
-void matrix_3x3::setRotateX(float x_rotation)
+void Matrix3::setRotateX(float x_rotation)
 {
 	_1D[4] = cos(x_rotation);
 	_1D[5] = sin(x_rotation);
@@ -73,7 +73,7 @@ void matrix_3x3::setRotateX(float x_rotation)
 	_1D[8] = cos(x_rotation);
 }
 
-void matrix_3x3::setRotateY(float y_rotation)
+void Matrix3::setRotateY(float y_rotation)
 {
 	_1D[0] = cos(y_rotation);
 	_1D[2] = -sin(y_rotation);
@@ -81,7 +81,7 @@ void matrix_3x3::setRotateY(float y_rotation)
 	_1D[8] = cos(y_rotation);
 }
 
-void matrix_3x3::setRotateZ(float z_rotation)
+void Matrix3::setRotateZ(float z_rotation)
 {
 	_1D[0] = cos(z_rotation);
 	_1D[1] = sin(z_rotation);
