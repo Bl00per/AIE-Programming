@@ -22,6 +22,7 @@ bool Application2D::startup()
 	playerCar = new game_object(car_texture, { xPos, yPos }, (52 * M_PI / 180), 2/*, 3.14159f*/);
 
 	m_timer = 0;
+	m_gear_timer = 1.0f;
 
 	return true;
 }
@@ -36,6 +37,7 @@ void Application2D::shutdown() {
 
 void Application2D::update(float deltaTime) {
 	m_timer += deltaTime;
+	m_gear_timer += deltaTime;
 
 	playerCar->update(deltaTime);
 	carControl(deltaTime);
@@ -113,15 +115,15 @@ void Application2D::carControl(float deltaTime)
 		playerCar->m_max_speed = 0.0f;
 		break;
 	case 1:
-		currentAcceleration = 10.0f;
+		currentAcceleration = 70.0f;
 		playerCar->m_max_speed = 54.0f;
 		break;
 	case 2:
-		currentAcceleration = 20.0f;
+		currentAcceleration = 60.0f;
 		playerCar->m_max_speed = 108.0f;
 		break;
 	case 3:
-		currentAcceleration = 30.0f;
+		currentAcceleration = 50.0f;
 		playerCar->m_max_speed = 162.0f;
 		break;
 	case 4:
@@ -129,15 +131,15 @@ void Application2D::carControl(float deltaTime)
 		playerCar->m_max_speed = 216.0f;
 		break;
 	case 5:
-		currentAcceleration = 50.0f;
+		currentAcceleration = 30.0f;
 		playerCar->m_max_speed = 270.0f;
 		break;
 	case 6:
-		currentAcceleration = 60.0f;
+		currentAcceleration = 20.0f;
 		playerCar->m_max_speed = 324.0f;
 		break;
 	case 7:
-		currentAcceleration = 70.0f;
+		currentAcceleration = 15.0f;
 		playerCar->m_max_speed = 378.0f;
 		break;
 	default:
@@ -145,17 +147,15 @@ void Application2D::carControl(float deltaTime)
 	}
 
 	// Gear change
-	if (input->wasKeyPressed(aie::INPUT_KEY_UP) && currentGear != maxGear)
+	if (input->wasKeyPressed(aie::INPUT_KEY_UP) && currentGear != maxGear && m_gear_timer >= 1.0f)
 	{
 		currentGear++;
-		//currentAcceleration += 10;
-		//playerCar->m_max_speed += 54;
+		m_gear_timer = 0;
 	}
 	else if (input->wasKeyPressed(aie::INPUT_KEY_DOWN) && currentGear != -1)
 	{
 		currentGear--;
-		//currentAcceleration -= 10;
-		//playerCar->m_max_speed -= 54;
+		m_gear_timer = 0;
 	}
 
 	// Acceleration
@@ -171,6 +171,25 @@ void Application2D::carControl(float deltaTime)
 			playerCar->m_acceleration = -80.0f;
 		}
 		else if (playerCar->m_speed == 0.0f)
+		{
+			currentGear = 0;
+		}
+
+		if (playerCar->m_speed > 324.0f)
+			currentGear = 7;
+		else if (playerCar->m_speed > 270.0f && playerCar->m_speed < 324.0f)
+			currentGear = 6;
+		else if (playerCar->m_speed > 216.0f && playerCar->m_speed < 270.0f)
+			currentGear = 5;
+		else if (playerCar->m_speed > 162.0f && playerCar->m_speed < 216.0f)
+			currentGear = 4;
+		else if (playerCar->m_speed > 108.0f && playerCar->m_speed < 162.0f)
+			currentGear = 3;
+		else if (playerCar->m_speed > 54.0f && playerCar->m_speed < 108.0f)
+			currentGear = 2;
+		else if (playerCar->m_speed > 0.0f && playerCar->m_speed < 54.0f)
+			currentGear = 1;
+		else
 		{
 			currentGear = 0;
 		}
@@ -209,7 +228,7 @@ void Application2D::carControl(float deltaTime)
 	//	currentGear = 0;
 	//}
 	// Keep the car stopped
-	else if (playerCar->m_speed > 1.3f && playerCar->m_speed < 0.0f)
+	else
 	{
 		playerCar->m_speed = 0.0f;
 	}

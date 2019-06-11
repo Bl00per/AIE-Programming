@@ -54,4 +54,5 @@ protected:
 
 
 	float m_timer;
+	float m_gear_timer;
 };
