@@ -30,6 +30,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RaceGame", "RaceGame\RaceGa
 		{AF59BB0B-E059-4773-83DC-728A949647DA} = {AF59BB0B-E059-4773-83DC-728A949647DA}
 	EndProjectSection
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ClickerGame", "ClickerGame\ClickerGame.vcxproj", "{6603C715-A84D-4710-A175-74038727F6DC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -86,6 +88,14 @@ Global
 		{B22D08AA-0365-4B6F-B2DF-533ED7E81FAA}.Release|x64.Build.0 = Release|x64
 		{B22D08AA-0365-4B6F-B2DF-533ED7E81FAA}.Release|x86.ActiveCfg = Release|Win32
 		{B22D08AA-0365-4B6F-B2DF-533ED7E81FAA}.Release|x86.Build.0 = Release|Win32
+		{6603C715-A84D-4710-A175-74038727F6DC}.Debug|x64.ActiveCfg = Debug|x64
+		{6603C715-A84D-4710-A175-74038727F6DC}.Debug|x64.Build.0 = Debug|x64
+		{6603C715-A84D-4710-A175-74038727F6DC}.Debug|x86.ActiveCfg = Debug|Win32
+		{6603C715-A84D-4710-A175-74038727F6DC}.Debug|x86.Build.0 = Debug|Win32
+		{6603C715-A84D-4710-A175-74038727F6DC}.Release|x64.ActiveCfg = Release|x64
+		{6603C715-A84D-4710-A175-74038727F6DC}.Release|x64.Build.0 = Release|x64
+		{6603C715-A84D-4710-A175-74038727F6DC}.Release|x86.ActiveCfg = Release|Win32
+		{6603C715-A84D-4710-A175-74038727F6DC}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
