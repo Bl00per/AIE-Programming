@@ -1,56 +1,60 @@
 #pragma once
 #include <vector>
-#include "edge.h"
 
-template<typename T>
+template <typename T>
 class edge;
 
-template<typename T>
+template <typename T>
 class node
 {
 public:
-
-	//struct node {
-	//	// User defined data attached to each node.
-	//	// In this example we just store the node position.
-	//	vector_2 position;
-
-	//	float gScore;
-	//	node* parent;
-
-	//	std::vector<edge> connections;
-	//};
-
 	node<T>(const T& a_data) : m_data(a_data)
 	{}
+
 	~node() {}
 
-	void add_edge(edge<T>* a_edge)
+	void add_edge(edge<T>* a_edge) 
 	{
 		m_edges.push_back(a_edge);
 	}
 
 	void remove_edge(edge<T>* a_edge)
 	{
-		auto iter = std::find(m_edges.begin(), m_edgess.end(), a_edges)
+		auto iter = std::find(m_edges.begin(), m_edges.end(), a_edge);
 		m_edges.erase(iter);
 	}
 
-	void disconnect()
+	std::vector<edge<T>*>& get_edges()
 	{
-
+		return m_edges;
 	}
 
+
+//private:
 	T m_data;
 	std::vector<edge<T>*> m_edges;
 
-	node<T>* m_previous = nullptr;
-	int m_g_score = 0;
+	node<T>* m_previous = nullptr; // Added this for pathing
+	int m_f_score = 0;				// Weighted pathing
+	int m_g_score = 0;				// Weighted pathing
+	int m_h_score = 0;				// Weighted pathing
 
-	void reset() 
+	void reset()					// For clearing graph faster
 	{
 		m_previous = nullptr;
+		m_f_score = 0;
 		m_g_score = 0;
+		m_h_score = 0;
+	}
+
+	bool operator<(const node<T>& a_rhs)
+	{
+		return m_g_score < a_rhs.m_g_score;
+	}
+
+	bool operator>(const node<T>& a_rhs)
+	{
+		return  m_g_score > a_rhs.m_g_score;
 	}
 };
 

@@ -1,7 +1,5 @@
 #pragma once
 
-
-
 template<typename T>
 class node;
 
@@ -9,12 +7,6 @@ template<typename T>
 class edge
 {
 public:
-
-	//struct edge {
-	//	node* target;
-	//	float cost;
-	//};
-
 	edge(node<T>* a_node_A, node<T>* a_node_B)
 	{
 		m_nodes[0] = a_node_A;
@@ -23,8 +15,10 @@ public:
 		m_nodes[0]->add_edge(this);
 		m_nodes[1]->add_edge(this);
 	}
-	~edge() {}
+
+	~edge() {};
 
 	node<T>* m_nodes[2];
+private:
 };
 

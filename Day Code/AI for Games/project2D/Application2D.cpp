@@ -50,18 +50,6 @@ bool Application2D::startup() {
 		}
 	}
 
-
-
-	//auto node_A = m_graph->create_node({ 100, 100 });
-	//auto node_B = m_graph->create_node({ 100, 300 });
-	//auto node_C = m_graph->create_node({ 300, 100 });
-	//auto node_D = m_graph->create_node({ 300, 300 });
-
-	//m_graph->create_edge(node_A, node_B);
-	//m_graph->create_edge(node_B, node_D);
-	//m_graph->create_edge(node_D, node_C);
-	//m_graph->create_edge(node_C, node_A);
-
 	m_timer = 0;
 
 	return true;
@@ -113,9 +101,13 @@ void Application2D::update(float deltaTime) {
 
 		if (m_selection_queue.size() == 2)
 		{
-			m_graph->calculate_parth_dijkstra(
-				m_selection_queue.front(), 
+			m_graph->calculate_path_a_star(
+				m_selection_queue.front(),
 				m_selection_queue.back());
+
+			//m_graph->calculate_path_dijkstra(
+			//	m_selection_queue.front(), 
+			//	m_selection_queue.back());
 		}
 	}
 

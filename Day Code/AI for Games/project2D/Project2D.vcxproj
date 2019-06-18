@@ -181,6 +181,7 @@
     <ClInclude Include="Application2D.h" />
     <ClInclude Include="edge.h" />
     <ClInclude Include="graph.h" />
+    <ClInclude Include="heap.h" />
     <ClInclude Include="node.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
