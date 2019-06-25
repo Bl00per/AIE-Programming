@@ -1,20 +1,30 @@
 #include "Game.h"
+#include "Enemy.h"
+#include "Food.h"
+#include "Powerup.h"
 #include <iostream>
 #include <random>
 #include <time.h>
 
-Game::Game()
+Game::Game() : m_gameOver{ false }
 {
-	m_gameOver = false;
 }
 
 Game::~Game()
 {
+	delete[] m_powerups;
+	delete[] m_enemies;
+	delete[] m_food;
 }
 
 bool Game::startup()
 {
+	srand(time(nullptr));
+
 	initializeMap();
+	initializeEnemies();
+	initializePowerups();
+	initializeFood();
 
 	m_player.setPosition(Point2D{ 0,0 });
 
@@ -33,51 +43,48 @@ void Game::update()
 
 	int command = getCommand();
 
-	if (m_player.executeCommand(command))
+	if (command == QUIT)
+	{
+		m_gameOver = true;
 		return;
+	}
 
-	m_map[playerPos.y][playerPos.x].executeCommand(command);
+	m_player.executeCommand(command, &m_map[playerPos.y][playerPos.x]);
+
+	for (int i = 0; i < m_enemyCount; i++)
+	{
+		if (m_enemies[i].isAlive() == false)
+		{
+			Point2D pos = m_enemies[i].getPosition();
+			m_map[pos.y][pos.x].setEnemy(nullptr);
+		}
+	}
 }
 
 void Game::draw()
 {
-	Point2D playerPos = m_player.getPosition();
 	system("cls");
+
+	Point2D playerPos = m_player.getPosition();
+
 	drawWelcomeMessage();
+
 	// List the directions the player can take
 	drawValidDirections();
+
 	// Draw the description of the current room
 	m_map[playerPos.y][playerPos.x].drawDescription();
+
 	// Redraw the map
 	drawMap();
+
+	// Draw the player's inventory
+	m_player.drawInventory();
 }
 
 bool Game::isGameOver()
 {
 	return m_gameOver;
-}
-
-void Game::initializeMap()
-{
-	srand(time(nullptr));
-
-	// Fill the arrays with random room types
-	for (int y = 0; y < MAZE_HEIGHT; y++)
-	{
-		for (int x = 0; x < MAZE_WIDTH; x++)
-		{
-			int type = rand() % (MAX_RANDOM_TYPE * 2);
-			if (type < MAX_RANDOM_TYPE)
-				m_map[y][x].setType(type);
-			else
-				m_map[y][x].setType(EMPTY);
-			m_map[y][x].setPosition(Point2D{ x, y });
-		}
-	}
-
-	// Set the entace and exit of the maze
-	m_map[0][0].setType(ENTRANCE);
-	m_map[MAZE_HEIGHT - 1][MAZE_WIDTH - 1].setType(EXIT);
 }
 
 void Game::drawWelcomeMessage()
@@ -138,6 +145,7 @@ int Game::getCommand()
 	std::cin >> input;
 
 	bool bMove = false;
+	bool bPickup = false;
 	while (input)
 	{
 		if (strcmp(input, "move") == 0)
@@ -166,6 +174,21 @@ int Game::getCommand()
 			return FIGHT;
 		}
 
+		if (strcmp(input, "exit") == 0)
+		{
+			return QUIT;
+		}
+
+		if (strcmp(input, "pick") == 0)
+		{
+			bPickup = true;
+		}
+		else if (bPickup == true)
+		{
+			if (strcmp(input, "up") == 0)
+				return PICKUP;
+		}
+
 		char next = std::cin.peek();
 		if (next == '\n' || next == EOF)
 			break;
@@ -173,4 +196,95 @@ int Game::getCommand()
 	}
 
 	return 0;
+}
+
+
+void Game::initializeMap()
+{
+	// Set room positions
+	for (int y = 0; y < MAZE_HEIGHT; y++)
+	{
+		for (int x = 0; x < MAZE_WIDTH; x++)
+		{
+			m_map[y][x].setPosition(Point2D{ x, y });
+		}
+	}
+
+	// Set the entrance and exit of the maze
+	m_map[0][0].setType(ENTRANCE);
+	m_map[MAZE_HEIGHT - 1][MAZE_WIDTH - 1].setType(EXIT);
+}
+
+void Game::initializeEnemies()
+{
+	// Create a dynamic array of enemies
+	// (the number of enemies will change every game)
+	m_enemyCount = 1 + rand() % 4;
+	m_enemies = new Enemy[m_enemyCount];
+
+	// Randomly place the enemies in rooms on the map
+	for (int i = 0; i < m_enemyCount; i++)
+	{
+		// A bit of math ensures the enemies wont spawn directly
+		// on or next to the entrance
+		int x = 2 + (rand() % (MAZE_WIDTH - 3));
+		int y = 2 + (rand() % (MAZE_HEIGHT - 3));
+
+		m_enemies[i].setPosition(Point2D{ x,y });
+		m_map[y][x].setEnemy(&m_enemies[i]);
+	}
+}
+
+void Game::initializePowerups()
+{
+	// Create some powerups
+	m_powerupCount = 3;
+	m_powerups = new Powerup[m_powerupCount];
+
+	// Randomly place the powerups in the map
+	for (int i = 0; i < m_powerupCount; i++)
+	{
+		char name[30] = "";
+		int x = rand() % (MAZE_WIDTH - 1);
+		int y = rand() % (MAZE_HEIGHT - 1);
+
+		float HP = 1;
+		float AT = 1;
+		float DF = 1;
+		
+		switch (i)
+		{
+		case 0:
+			strcpy(name, "potion of ");
+			m_powerups[i].getHealthMultiplier();
+			break;
+		case 1:
+			strcpy(name, "sword of ");
+			m_powerups[i].getAttackMultiplier();
+			break;
+		case 2:
+			strcpy(name, "shield of ");
+			m_powerups[i].getDefenceMultiplier();
+			break;
+		}
+
+		strncat(name, itemNames[(rand() % 15)], 30);
+		m_powerups[i].setName(name);
+		m_map[y][x].setPowerup(&m_powerups[i]);
+	}
+}
+
+void Game::initializeFood()
+{
+	// Create some food
+	m_foodCount = 3;
+	m_food = new Food[m_foodCount];
+
+	// Randomly place the food in the map
+	for (int i = 0; i < m_foodCount; i++)
+	{
+		int x = rand() % (MAZE_WIDTH - 1);
+		int y = rand() % (MAZE_HEIGHT - 1);
+		m_map[y][x].setFood(&m_food[i]);
+	}
 }
