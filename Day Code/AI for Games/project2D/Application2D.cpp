@@ -126,38 +126,42 @@ void Application2D::draw() {
 	// begin drawing sprites
 	m_2dRenderer->begin();
 
-	// Draw the graph
-	for (auto& a_edge : m_graph->m_edges)
-	{
-		node<vector_2>* A = a_edge->m_nodes[0];
-		node<vector_2>* B = a_edge->m_nodes[1];
-		m_2dRenderer->drawLine(A->m_data.x, A->m_data.y, B->m_data.x, B->m_data.y, 2.0f);
-	}
+	//// Draw the graph
+	//for (auto& a_edge : m_graph->m_edges)
+	//{
+	//	node<vector_2>* A = a_edge->m_nodes[0];
+	//	node<vector_2>* B = a_edge->m_nodes[1];
+	//	m_2dRenderer->drawLine(A->m_data.x, A->m_data.y, B->m_data.x, B->m_data.y, 2.0f);
+	//}
 
-	// Edges
-	m_2dRenderer->setRenderColour(1.0f, 0.0f, 0.0f, 1.0f);
-	for (int i = 0; i < int(m_graph->m_path.size()) - 1; i++)
-	{
-		node<vector_2>* A = m_graph->m_path[i];
-		node<vector_2>* B = m_graph->m_path[i + 1];
-		m_2dRenderer->drawLine(A->m_data.x, A->m_data.y, B->m_data.x, B->m_data.y, 2.0f);
+	//// Edges
+	//m_2dRenderer->setRenderColour(1.0f, 0.0f, 0.0f, 1.0f);
+	//for (int i = 0; i < int(m_graph->m_path.size()) - 1; i++)
+	//{
+	//	node<vector_2>* A = m_graph->m_path[i];
+	//	node<vector_2>* B = m_graph->m_path[i + 1];
+	//	m_2dRenderer->drawLine(A->m_data.x, A->m_data.y, B->m_data.x, B->m_data.y, 2.0f);
 
-	}
+	//}
 
-	// Draw nodes
-	m_2dRenderer->setRenderColour(1.0f, 1.0f, 1.0f, 1.0f);
-	for (auto& a_node : m_graph->m_nodes)
-	{
-		m_2dRenderer->drawCircle(a_node->m_data.x, a_node->m_data.y, 8.0f);
-	}
+	//// Draw nodes
+	//m_2dRenderer->setRenderColour(1.0f, 1.0f, 1.0f, 1.0f);
+	//for (auto& a_node : m_graph->m_nodes)
+	//{
+	//	m_2dRenderer->drawCircle(a_node->m_data.x, a_node->m_data.y, 8.0f);
+	//}
 
-	// Render selected
-	m_2dRenderer->setRenderColour(0.0f, 1.0f, 0.0f, 1.0f);
+	//// Render selected
+	//m_2dRenderer->setRenderColour(0.0f, 1.0f, 0.0f, 1.0f);
 
-	if (m_selection_queue.size() > 0)
-		m_2dRenderer->drawCircle(m_selection_queue.front()->m_data.x, m_selection_queue.front()->m_data.y, 12.0f);
-	if (m_selection_queue.size() > 1)
-		m_2dRenderer->drawCircle(m_selection_queue.back()->m_data.x, m_selection_queue.back()->m_data.y, 12.0f);
+	//if (m_selection_queue.size() > 0)
+	//	m_2dRenderer->drawCircle(m_selection_queue.front()->m_data.x, m_selection_queue.front()->m_data.y, 12.0f);
+	//if (m_selection_queue.size() > 1)
+	//	m_2dRenderer->drawCircle(m_selection_queue.back()->m_data.x, m_selection_queue.back()->m_data.y, 12.0f);
+
+	m_2dRenderer->setRenderColour(0.0f, 1.0f, 1.0f, 1.0f);
+
+
 
 	m_2dRenderer->setRenderColour(1.0f, 1.0f, 1.0f, 1.0f);
 

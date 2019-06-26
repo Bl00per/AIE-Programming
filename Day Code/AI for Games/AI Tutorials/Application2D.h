@@ -1,14 +1,9 @@
 #pragma once
 
 #include "Application.h"
-#include "Renderer2D.h"
-#include "graph.h"
-#include "node.h"
-#include "edge.h"
-#include "vector_2.h"
-#include "Boid.h"
-#include "Flock.h"
-#include <queue>
+#include "Agent.h"
+#include "KeyboardBehaviour.h"
+#include "SeekBehaviour.h"
 
 class Application2D : public aie::Application {
 public:
@@ -26,15 +21,13 @@ protected:
 
 	aie::Renderer2D*	m_2dRenderer;
 	aie::Font*			m_font;
-	Flock FlockThing;
 
-	int spacing = 80;
-	int width = 15;
-	int height = 8;
+	Agent* m_player;
+	KeyboardBehaviour* m_keyboardBehaviour;
 
-	graph<vector_2>* m_graph;
+	Agent* m_enemy;
+	SeekBehaviour* m_seekBehaviour;
 
-	std::queue<node<vector_2>*> m_selection_queue;
 
 	float m_timer;
 };

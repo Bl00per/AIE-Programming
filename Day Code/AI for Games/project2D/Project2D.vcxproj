@@ -172,14 +172,18 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Application2D.cpp" />
+    <ClCompile Include="Boid.cpp" />
     <ClCompile Include="edge.cpp" />
+    <ClCompile Include="Flock.cpp" />
     <ClCompile Include="graph.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="node.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application2D.h" />
+    <ClInclude Include="Boid.h" />
     <ClInclude Include="edge.h" />
+    <ClInclude Include="Flock.h" />
     <ClInclude Include="graph.h" />
     <ClInclude Include="heap.h" />
     <ClInclude Include="node.h" />
