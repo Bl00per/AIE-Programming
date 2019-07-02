@@ -173,8 +173,8 @@
   <ItemGroup>
     <ClCompile Include="Agent.cpp" />
     <ClCompile Include="Application2D.cpp" />
-    <ClCompile Include="Behaviour.cpp" />
     <ClCompile Include="KeyboardBehaviour.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="SeekBehaviour.cpp" />
   </ItemGroup>
   <ItemGroup>

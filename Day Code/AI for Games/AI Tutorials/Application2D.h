@@ -22,11 +22,12 @@ protected:
 	aie::Renderer2D*	m_2dRenderer;
 	aie::Font*			m_font;
 
+	aie::Texture* m_playerTexture;
+	aie::Texture* m_enemyTexture;
+
 	Agent* m_player;
-	KeyboardBehaviour* m_keyboardBehaviour;
 
 	Agent* m_enemy;
-	SeekBehaviour* m_seekBehaviour;
 
 
 	float m_timer;

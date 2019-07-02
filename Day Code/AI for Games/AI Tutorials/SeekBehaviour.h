@@ -2,14 +2,15 @@
 
 #include "Behaviour.h"
 
+class Agent;
+
 class SeekBehaviour : public Behaviour
 {
 public:
-	SeekBehaviour();
-	virtual ~SeekBehaviour();
+	SeekBehaviour(Agent* target);
+	~SeekBehaviour();
 
-	virtual vector_2 update(Agent* agent, float deltaTime);
-	void SetTarget(Agent* agent) { m_target = agent; }
+	void update(Agent* agent, float deltaTime);
 
 private:
 	Agent* m_target;

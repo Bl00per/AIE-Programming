@@ -1,6 +1,7 @@
 #pragma once
 
 #include "vector_2.h"
+#include <cmath>
 
 #define BOID_SPEED 5.0f
 

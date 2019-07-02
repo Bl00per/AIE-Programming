@@ -6,8 +6,8 @@ class KeyboardBehaviour : public Behaviour
 {
 public:
 	KeyboardBehaviour();
-	virtual ~KeyboardBehaviour();
+	~KeyboardBehaviour();
 
-	virtual vector_2 update(Agent* agent, float deltaTime);
+	void update(Agent* agent, float deltaTime);
 };
 

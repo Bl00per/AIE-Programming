@@ -16,16 +16,16 @@ bool Application2D::startup() {
 	m_2dRenderer = new aie::Renderer2D();
 	m_font = new aie::Font("./font/consolas.ttf", 32);
 
-	m_player = new Agent();
-	m_player->SetPosition(vector_2(100.0f, 100.0f));
-	m_keyboardBehaviour = new KeyboardBehaviour();
-	m_player->AddBehaviour(m_keyboardBehaviour);
+	m_playerTexture = new aie::Texture("./textures/todd_chan.png");
+	m_enemyTexture = new aie::Texture("./textures/fallout76.jpg");
 
-	m_enemy = new Agent();
-	m_enemy->SetPosition(vector_2(500.0f, 500.0f));
-	m_seekBehaviour = new SeekBehaviour();
-	m_seekBehaviour->SetTarget(m_player);
-	m_enemy->AddBehaviour(m_seekBehaviour);
+	m_player = new Agent(m_playerTexture, 200.0f, 200.0f);
+	m_player->AddBehaviour(new KeyboardBehaviour());
+	m_player->m_maxSpeed = 80.0f;
+
+	m_enemy = new Agent(m_enemyTexture, 400.0f, 100.0f);
+	m_enemy->AddBehaviour(new SeekBehaviour(m_player));
+	m_enemy->m_maxSpeed = 80.0f;
 
 	m_timer = 0;
 
@@ -38,12 +38,16 @@ void Application2D::shutdown() {
 	m_font = nullptr;
 	delete m_2dRenderer;
 	m_2dRenderer = nullptr;
+	delete m_player;
+	m_player = nullptr;
+	delete m_enemy;
+	m_enemy = nullptr;
 }
 
 void Application2D::update(float deltaTime) {
 
 	m_timer += deltaTime;
-
+	
 	// input example
 	aie::Input* input = aie::Input::getInstance();
 
@@ -69,15 +73,13 @@ void Application2D::draw() {
 	// begin drawing sprites
 	m_2dRenderer->begin();
 
-	m_2dRenderer->setRenderColour(0.0f, 0.0f, 1.0f);
 	m_player->draw(m_2dRenderer);
-	m_2dRenderer->setRenderColour(1.0f, 0.0f, 0.0f);
 	m_enemy->draw(m_2dRenderer);
 
-
+	m_2dRenderer->setRenderColour(1.0f, 1.0f, 1.0f);
 	// output some text, uses the last used colour
 	char fps[32];
-	sprintf_s(fps, 32, "Nodes: %i", getFPS());
+	sprintf_s(fps, 32, "FPS: %i", getFPS());
 	m_2dRenderer->drawText(m_font, fps, 0, 720 - 32);
 
 	// done drawing sprites
