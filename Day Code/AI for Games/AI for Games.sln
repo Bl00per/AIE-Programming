@@ -11,6 +11,14 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Project2D", "Project2D\Proj
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AI Tutorials", "AI Tutorials\AI Tutorials.vcxproj", "{F9AB4F64-35C6-46E5-9803-9391A8FA0815}"
+	ProjectSection(ProjectDependencies) = postProject
+		{AF59BB0B-E059-4773-83DC-728A949647DA} = {AF59BB0B-E059-4773-83DC-728A949647DA}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FlowFields", "FlowFields\FlowFields.vcxproj", "{9C2063A9-19C6-4034-898D-A315396B3445}"
+	ProjectSection(ProjectDependencies) = postProject
+		{AF59BB0B-E059-4773-83DC-728A949647DA} = {AF59BB0B-E059-4773-83DC-728A949647DA}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -44,6 +52,13 @@ Global
 		{F9AB4F64-35C6-46E5-9803-9391A8FA0815}.Release|x64.Build.0 = Release|x64
 		{F9AB4F64-35C6-46E5-9803-9391A8FA0815}.Release|x86.ActiveCfg = Release|Win32
 		{F9AB4F64-35C6-46E5-9803-9391A8FA0815}.Release|x86.Build.0 = Release|Win32
+		{9C2063A9-19C6-4034-898D-A315396B3445}.Debug|x64.ActiveCfg = Debug|x64
+		{9C2063A9-19C6-4034-898D-A315396B3445}.Debug|x64.Build.0 = Debug|x64
+		{9C2063A9-19C6-4034-898D-A315396B3445}.Debug|x86.ActiveCfg = Debug|Win32
+		{9C2063A9-19C6-4034-898D-A315396B3445}.Debug|x86.Build.0 = Debug|Win32
+		{9C2063A9-19C6-4034-898D-A315396B3445}.Release|x64.ActiveCfg = Release|Win32
+		{9C2063A9-19C6-4034-898D-A315396B3445}.Release|x86.ActiveCfg = Release|Win32
+		{9C2063A9-19C6-4034-898D-A315396B3445}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
