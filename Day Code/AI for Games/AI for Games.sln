@@ -20,6 +20,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FlowFields", "FlowFields\Fl
 		{AF59BB0B-E059-4773-83DC-728A949647DA} = {AF59BB0B-E059-4773-83DC-728A949647DA}
 	EndProjectSection
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NavMesh", "NavMesh\NavMesh.vcxproj", "{BDF1C890-7D40-49F6-9EEB-79F12B30DF43}"
+	ProjectSection(ProjectDependencies) = postProject
+		{AF59BB0B-E059-4773-83DC-728A949647DA} = {AF59BB0B-E059-4773-83DC-728A949647DA}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -59,6 +64,13 @@ Global
 		{9C2063A9-19C6-4034-898D-A315396B3445}.Release|x64.ActiveCfg = Release|Win32
 		{9C2063A9-19C6-4034-898D-A315396B3445}.Release|x86.ActiveCfg = Release|Win32
 		{9C2063A9-19C6-4034-898D-A315396B3445}.Release|x86.Build.0 = Release|Win32
+		{BDF1C890-7D40-49F6-9EEB-79F12B30DF43}.Debug|x64.ActiveCfg = Debug|x64
+		{BDF1C890-7D40-49F6-9EEB-79F12B30DF43}.Debug|x64.Build.0 = Debug|x64
+		{BDF1C890-7D40-49F6-9EEB-79F12B30DF43}.Debug|x86.ActiveCfg = Debug|Win32
+		{BDF1C890-7D40-49F6-9EEB-79F12B30DF43}.Debug|x86.Build.0 = Debug|Win32
+		{BDF1C890-7D40-49F6-9EEB-79F12B30DF43}.Release|x64.ActiveCfg = Release|Win32
+		{BDF1C890-7D40-49F6-9EEB-79F12B30DF43}.Release|x86.ActiveCfg = Release|Win32
+		{BDF1C890-7D40-49F6-9EEB-79F12B30DF43}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

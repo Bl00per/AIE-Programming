@@ -177,7 +177,7 @@ void Application2D::performIntergration(int goalX, int goalY) {
 	std::vector<int> neighbours(16);
 
 	// Do search
-	while (!openList.empty())
+	while (openList.empty() == false)
 	{
 		auto current = openList.front();
 		openList.pop_front();
@@ -191,7 +191,24 @@ void Application2D::performIntergration(int goalX, int goalY) {
 		{
 			// Calculate new trvael cost
 			// current is a std::pair<int,int> representing x and y
-			float cost = m_integrationField[current.second][current.first] + m_costField[neighbourCount[i + 1]][neighbours[i]];
+			float cost = m_integrationField[current.second][current.first] + m_costField[neighbours[i + 1]][neighbours[i]];
+
+			// Compare if score was lower
+			if (cost < m_integrationField[neighbours[i + 1]][neighbours[i]])
+			{
+				// Create a new std::pair for the neighbour
+				std::pair<int, int> neighbour = { neighbours[i], neighbours[i + 1] };
+
+				// Check if they should be added to the open list
+				auto iter = std::find(openList.begin(), openList.end(), neighbour);
+				if (iter == openList.end())
+				{
+					openList.push_back(neighbour);
+				}
+
+				// Update the cost
+				m_integrationField[neighbours[i + 1]][neighbours[i]] = cost;
+			}
 		}
 	}
 }
@@ -200,4 +217,59 @@ void Application2D::generateFlowfield() {
 	// for each grid cell, sample neighbour costs and 
 	// setup flow direction to lowest cost neighbour
 
+	std::vector<int> neighbours;
+	int lowestX, lowestY;
+	float lowestScore;
+	bool foundNeighbour = false;
+
+	for (int r = 0; r < FLOWFIELD_ROWS; r++)
+	{
+		for (int c = 0; c < FLOWFIELD_COLS; c++)
+		{
+			// Reset field
+			m_flowField[r][c].x = 0;
+			m_flowField[r][c].y = 0;
+
+			// Reset lowest score
+			lowestScore = FLT_MAX;
+
+			// Gather neighbours
+			getCellNeighbours(c, r, neighbours);
+
+			unsigned int neighbourCount = neighbours.size();
+
+			// Only set a vector if neighbours found
+			foundNeighbour = false;
+			if (neighbourCount > 0)
+			{
+				for (unsigned int i = 0; i < neighbourCount; i += 2)
+				{
+					int nx = neighbours[i];
+					int ny = neighbours[i + 1];
+
+					// Is it lowest?
+					if (m_integrationField[nx][ny] < lowestScore)
+					{
+						lowestScore = m_integrationField[nx][ny];
+						lowestX = nx;
+						lowestY = ny;
+						foundNeighbour = true;
+					}
+				}
+
+				// If valid neighbour found, normalise direction
+				if (foundNeighbour)
+				{
+					float mag = float((lowestX - c) * (lowestX - c) + (lowestY - r) * (lowestY - r));
+
+					if (mag > 0)
+					{
+						mag = sqrt(mag);
+						m_flowField[r][c].x = (lowestX - c) / mag;
+						m_flowField[r][c].y = (lowestY - r) / mag;
+					}
+				}
+			}
+		}
+	}
 }
