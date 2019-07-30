@@ -37,7 +37,9 @@ namespace WinForm
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
             System.Timers.Timer aTimer = new System.Timers.Timer();
-            cookieCount.Text = aTimer.ToString();
+            aTimer.Interval = 1000;
+
+            
 
             //if ( == "1.0")
         }
